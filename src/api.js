@@ -2,6 +2,7 @@
 
 let express = require('express');
 let router = express.Router();
+let reg = require('./controllers/register');
 
 class Api{
 
@@ -12,9 +13,9 @@ this.init();
 
 init(){
 
-this.router.post('/home',(request,response) => {
-response.render('home');
-});
+
+this.router.post('/reg', reg.registerUser.bind(express)); 
+
 }
 
 

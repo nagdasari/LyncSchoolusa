@@ -9,12 +9,17 @@ let Api = require('./api.js');
 let dbConfig = require('./configurations/database/db.js');
 let app = express();
 let path = require('path');
+let mongoose = require('mongoose');
+
+//import es6Promise from 'es6-promise';
+//mongoose.Promise = es6Promise.Promise;
 
 
 class App {
 
 constructor(){
-this.root = '/../';
+//this.root = '/../';
+this.root = '/../../';
 this.app= app;
 this.config();
 this.templates();
@@ -24,8 +29,10 @@ this.mongoConnect();
    }
 
 config(){
+  //  let env = process.env.NODE_ENV || 'developement';
+//    let root = this.root;
   this.app.use(passport.initialize());
-
+ //this.app.use(express.static(join(__dirname, root, 'assests')));
   // persistent login sessions
  this.app.use(passport.session());
 
@@ -34,9 +41,9 @@ config(){
 
 templates(){
 
-  this.app.set('views', path.join(__dirname, this.root, 'views'));
          this.app.engine('html', ejs.renderFile);
          this.app.set('view engine', 'html');
+         this.app.use(express.static('views'));
      }
 
 
@@ -57,13 +64,23 @@ this.app.use(api);
 
 
 mongoConnect(){
-  camo.connect(dbConfig.mongoUrl).then(function(conn) {
+//  this.mongoose.connect(dbConfig.mongoUrl).then(function(conn) {
+//
+//              console.log("Mongo connected to ", dbConfig.mongoUrl, "successfully");
+//          }, function(err) {
+//
+//              console.log("Mongo connected to ", dbConfig.mongoUrl, "failed");
+//        });
+    
+    mongoose.connect(dbConfig.mongoUrl, function(err){
+        if(err){
+        console.log("Mongo connection failed" + err);}else{
+            console.log("successfully connected");
+        }
+    });
 
-              console.log("Mongo connected to ", dbConfig.mongoUrl, "successfully");
-          }, function(err) {
-
-              console.log("Mongo connected to ", dbConfig.mongoUrl, "failed");
-          });
+    
+    
   }
 
 

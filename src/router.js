@@ -15,12 +15,22 @@ class Router {
   init(){
 
 this.router.get('/', (request,response) => {
-response.render('home');
+response.render('homesource');
 
     });
 
+      
+this.router.get('/login',(request,response) => {
+   response.render('login'); 
+});
 
 
+this.router.get('/register',(request,response) => {
+   response.render('register'); 
+});      
+      
+      
+      
   }
 }
 
