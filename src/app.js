@@ -64,13 +64,7 @@ this.app.use(api);
 
 
 mongoConnect(){
-//  this.mongoose.connect(dbConfig.mongoUrl).then(function(conn) {
-//
-//              console.log("Mongo connected to ", dbConfig.mongoUrl, "successfully");
-//          }, function(err) {
-//
-//              console.log("Mongo connected to ", dbConfig.mongoUrl, "failed");
-//        });
+
     
     mongoose.connect(dbConfig.mongoUrl, function(err){
         if(err){
