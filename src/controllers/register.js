@@ -49,6 +49,7 @@ class SaveUser{
                           lastname: lastname,
                           email:email,
                           password : password,
+                          verify_user: false,
                           createdat: createdat
 
                          }).save((error) =>{

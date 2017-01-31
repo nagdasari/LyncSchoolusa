@@ -27,7 +27,9 @@ let userSchema  = mongoose.Schema({
         unique:false
     },
     
-           
+    verify_user:{
+        type: Boolean
+    },       
                                   
     createdat :{
         type: String,
