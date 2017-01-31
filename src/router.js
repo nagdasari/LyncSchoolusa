@@ -29,7 +29,9 @@ this.router.get('/register',(request,response) => {
    response.render('register'); 
 });      
       
-      
+this.router.get('/thankyou',(request,response) => {
+   response.render('thankyou'); 
+});
       
   }
 }
