@@ -62,7 +62,7 @@ class SaveUser{
                         from: userName,
                         to: email,
                         subject: "[Lync School]" + " " + " Please verify your email address.",
-                        html: "Hello " +firstname+" "+lastname+".<br/>"+"Help us secure your Lync School account by verifiying your email address ("+ email + ")." + " This lets you access all of Lync School features." +"<br/>" + "" + "<a href=" + link + ">Click here to verify </a>", 
+                        html: "Hello " +firstname+" "+lastname+".<br/>"+"Help us secure your Lync School account by verifying your email address ("+ email + ")." + " This lets you access all of Lync School features." +"<br/>" + "" + "<a href=" + link + ">Click here to verify </a>", 
 			  
         }
                      //console.log(mailOptions);
