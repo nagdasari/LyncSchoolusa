@@ -43,7 +43,7 @@ class SaveUser{
         }
     
     regEntry(firstname,lastname,email,password,createdat,hostname){
-        return new Promise(function(resolve,reject){
+        return new Promise((resolve,reject) => {
             let new_user = new User({
                          firstname:firstname,
                           lastname: lastname,
@@ -51,7 +51,7 @@ class SaveUser{
                           password : password,
                           createdat: createdat
 
-                         }).save(function(error){
+                         }).save((error) =>{
                 if(error){
                     console.log(error);
                     return reject(error);
@@ -66,7 +66,7 @@ class SaveUser{
 			  
         }
                      //console.log(mailOptions);
-                     transport.sendMail(mailOptions, function (error, response) {
+                     transport.sendMail(mailOptions,  (error, response) => {
                            if (error) {
                                  console.log(error);
             
