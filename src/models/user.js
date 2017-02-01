@@ -29,7 +29,34 @@ let userSchema  = mongoose.Schema({
     
     verify_user:{
         type: Boolean
-    },       
+    },  
+    
+    provider:{
+        type: String,
+        unique:false
+    },
+    
+    display_image:{
+        type: String,
+        unique: false
+    },
+    
+    gender:{
+        type: String,
+        unique:false
+    },
+    
+    about_me:{
+    type: String,
+    unique:false
+    
+    
+},
+    location:{
+        type: String,
+        unique:false
+    },
+    
                                   
     createdat :{
         type: String,

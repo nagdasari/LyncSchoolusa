@@ -50,6 +50,11 @@ class SaveUser{
                           email:email,
                           password : password,
                           verify_user: false,
+                          provider: "local",
+                          display_image: "",
+                          gender:"",
+                          about_me: "",
+                          location:"",
                           createdat: createdat
 
                          }).save((error) =>{
