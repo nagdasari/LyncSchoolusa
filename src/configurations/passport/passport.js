@@ -82,7 +82,7 @@ passport.use(new FacebookStrategy({
                     //newUser.facebook.token = token; // we will save the token that facebook provides to the user                    
                    newUser.id    = profile.id; // set the users facebook id                   
                     newUser.token = token; // we will save the token that facebook provides to the user                    
-                  /
+                  
 				  //  newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
                    // newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
 					newUser.provider="facebook";
