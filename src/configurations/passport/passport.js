@@ -29,10 +29,14 @@ passport.use('local',new LocalStrategy( {
         return done(err)
       }
       if (!user) {
-        return done(null, false,req.flash('login', 'That email is wrong.'))
+       // return done(null, false,req.flash('login', 'That email is wrong.'))
+		 return done(null, false)
+      
       }
       if (user.password!=password  ) {
-        return done(null, false,req.flash('login', 'Oops !! Wrong password.'))
+        //return done(null, false,req.flash('login', 'Oops !! Wrong password.'))
+		return done(null, false)
+      
       }
 	  else{
 	
@@ -56,7 +60,7 @@ passport.use(new FacebookStrategy({
     },
 
     // facebook will send back the token and profile
-    function(token, refreshToken, profile, done) {
+    function(req,token, refreshToken, profile, done) {
 
         // asynchronous
         process.nextTick(function() {
@@ -95,7 +99,9 @@ passport.use(new FacebookStrategy({
                             throw err;
 
                         // if successful, return the new user
-                        return done(null, newUser,req.flash('profile', 'Logged in!!'));
+                        //return done(null, newUser,req.flash('profile', 'Logged in!!'));
+						 return done(null, newUser);
+                    
                     });
                 }
 
@@ -116,7 +122,7 @@ passport.use(new FacebookStrategy({
 		profileFields: ['id', 'emails', 'gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified'],
         
     },
-    function(token, refreshToken, profile, done) {
+    function(req,token, refreshToken, profile, done) {
 
         // make the code asynchronous
         // User.findOne won't fire until we have all our data back from Google
@@ -152,7 +158,9 @@ passport.use(new FacebookStrategy({
                     newUser.save(function(err) {
                         if (err)
                             throw err;
-                        return done(null, newUser,req.flash('profile', 'Logged in!!'));
+                      //  return done(null, newUser,req.flash('profile', 'Logged in!!'));
+						return done(null, newUser);
+                    
                     });
                 }
             });
