@@ -54,7 +54,7 @@ passport.use(new FacebookStrategy({
         // pull in our app id and secret from our auth.js file
         clientID        : configAuth.facebookAuth.clientID,
         clientSecret    : configAuth.facebookAuth.clientSecret,
-		profileFields: ['id', 'emails', 'gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified'],
+		profileFields: ['id', 'emails','photos','gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified'],
         callbackURL     : configAuth.facebookAuth.callbackURL
 
     },
@@ -79,7 +79,7 @@ passport.use(new FacebookStrategy({
                     return done(null, user); // user found, return that user
                 } else {
                     // if there is no user found with that facebook id, create them
-                    var newUser            = new User();
+                   /* var newUser            = new User();
 
                     // set all of the facebook information in our user model
                    // newUser.facebook.id    = profile.id; // set the users facebook id                   
@@ -90,17 +90,39 @@ passport.use(new FacebookStrategy({
 				  //  newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName; // look at the passport user profile to see how names are returned
                    // newUser.facebook.name  = profile.name.givenName + ' ' + profile.name.familyName;
 					newUser.provider="facebook";
-					newUser.name= profile.name.givenName + ' ' + profile.name.familyName;
+					console.log(profile);
+					//newUser.name= profile.name.givenName + ' ' + profile.name.familyName;
+					newUser.first
 					//newUser.facebook.email = profile.emails[0].value; // facebook can return multiple emails so we'll take the first
 					newUser.email=profile.emails[0].value;
                     // save our user to the database
-                    newUser.save(function(err) {
+					
+					*/
+					console.log(profile);
+					 let new_user = new User({
+                         firstname:profile.name.givenName,
+                          lastname: profile.name.familyName,
+                          email:profile.emails[0].value,
+                          password : "",
+                          verify_user: true,
+                          provider: "facebook",
+                          display_image: profile.photos[0].value,
+                          gender:profile.gender,
+                          about_me: "",
+                          location:"",
+                          createdat: new Date(),
+						  id:profile.id
+
+                         })
+					
+					
+                    new_user.save(function(err) {
                         if (err)
                             throw err;
 
                         // if successful, return the new user
                         //return done(null, newUser,req.flash('profile', 'Logged in!!'));
-						 return done(null, newUser);
+						 return done(null, new_user);
                     
                     });
                 }
@@ -119,7 +141,7 @@ passport.use(new FacebookStrategy({
         clientID        : configAuth.googleAuth.clientID,
         clientSecret    : configAuth.googleAuth.clientSecret,
         callbackURL     : configAuth.googleAuth.callbackURL,
-		profileFields: ['id', 'emails', 'gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified'],
+		profileFields: ['id', 'emails', 'gender', 'link', 'locale', 'name', 'timezone', 'updated_time', 'verified','placesLived'],
         
     },
     function(req,token, refreshToken, profile, done) {
@@ -141,8 +163,8 @@ passport.use(new FacebookStrategy({
                     return done(null, user);
                 } else {
                     // if the user isnt in our database, create a new user
-                    var newUser          = new User();
-
+                    /*var newUser          = new User();
+console.log(profile);
                     // set all of the relevant information
                     //newUser.google.id    = profile.id;
                     //newUser.google.token = token;
@@ -153,13 +175,40 @@ passport.use(new FacebookStrategy({
                     //newUser.google.email = profile.emails[0].value; // pull the first email
 					newUser.name  = profile.displayName;
                     newUser.email = profile.emails[0].value; // pull the first email
+*/
+					
+					console.log(profile);placesLived
+					let new_user = new User({
+                         firstname:profile.name.givenName,
+                          lastname: profile.name.familyName,
+                          email:profile.emails[0].value,
+                          password : "",
+                          verify_user: true,
+                          provider: "google",
+                          display_image: profile.photos[0].value,
+                          gender:profile.gender,
+                          about_me: "",
+                          location:"",
+                          createdat: new Date(),
+						  id:profile.id
 
+                         })
+
+					
+					
+					
+					
+					
+					
+					
+					
+					
                     // save the user
-                    newUser.save(function(err) {
+                    new_user.save(function(err) {
                         if (err)
                             throw err;
                       //  return done(null, newUser,req.flash('profile', 'Logged in!!'));
-						return done(null, newUser);
+						return done(null, new_user);
                     
                     });
                 }
