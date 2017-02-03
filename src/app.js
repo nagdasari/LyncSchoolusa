@@ -1,4 +1,4 @@
-'use strict';
+
 let express = require('express');
 let bodyParser = require('body-parser');
 let ejs = require('ejs');
@@ -13,7 +13,11 @@ let app = express();
 let path = require('path');
 let mongoose = require('mongoose');
 let session = require('express-session');
-
+let RedisStore = require('connect-redis')(session);
+let cookieParser = require('cookie-parser');
+let User=require('./models/user');
+let flash=require("connect-flash");
+require('./configurations/passport/passport')(passport);
 
 class App {
 
@@ -23,8 +27,10 @@ this.app= app;
 this.config();
 this.templates();
 this.middlewares();
+
 this.routes();
 this.mongoConnect();
+this.initSessionStorage();
    }
 
 config(){
@@ -34,7 +40,7 @@ config(){
  //this.app.use(express.static(join(__dirname, root, 'assests')));
   // persistent login sessions
  this.app.use(passport.session());
-   // app.use(flash());
+   this.app.use(flash());
 
 }
 
@@ -49,6 +55,15 @@ templates(){
 middlewares(){
   this.app.use(bodyParser.json());
   this.app.use(bodyParser.urlencoded({ extended: false }));
+  this.app.use(cookieParser());
+	this.app.use(require('express-session')({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}));
+this.app.use(passport.initialize());
+//this.app.use(flash());
+this.app.use(passport.session());
 }
 
 
@@ -79,7 +94,53 @@ mongoConnect(){
     
   }
 
+initSessionStorage(){
+/*app.use(session({  
+  store: new RedisStore({
+    url: config.redisStore.url
+  }),
+  secret: config.redisStore.secret,
+  resave: false,
+  saveUninitialized: false
+}))
+app.use(passport.initialize())  
+app.use(passport.session())
+*/
+//passport.use(new LocalStrategy(User.authenticate()));
+/*passport.use(new LocalStrategy( {
+    usernameField: 'Email',
+    passwordField: 'password',
+	//passReqToCallback : true
+  }, 
+  function(username, password, done) {
+	  console.log(username);
+    User.findOne({ email: username }, function (err, user) {
+      if (err) {
+		  console.log(err);
+        return done(err)
+      }
+      if (!user) {
+        return done(null, false,req.flash('login', 'That email is wrong.'))
+      }
+      if (user.password!=password  ) {
+        return done(null, false,req.flash('login', 'Oops !! Wrong password.'))
+      }
+	  else{
+		  passport.serializeUser(function(user, done) {
+  done(null, user);
+});
 
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
+      return done(null, user)}
+    })
+  }
+));*/
+//passport.serializeUser(User.serializeUser());
+//passport.deserializeUser(User.deserializeUser());
+
+}
 
 
 

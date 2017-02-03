@@ -2,6 +2,7 @@
 
 let mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
+let passportLocalMongoose = require('passport-local-mongoose');
 
 
 let userSchema  = mongoose.Schema({
@@ -61,8 +62,14 @@ let userSchema  = mongoose.Schema({
     createdat :{
         type: String,
         unique:false
+    },
+	facebook         : {
+        id           : String,
+        token        : String,
+        email        : String,
+        name         : String
     }
     
 });
-
+userSchema.plugin(passportLocalMongoose);
 module.exports  =  mongoose.model('users', userSchema);
