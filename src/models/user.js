@@ -63,12 +63,20 @@ let userSchema  = mongoose.Schema({
         type: String,
         unique:false
     },
-	facebook         : {
+	id:{type:String},
+	token:{type:String}
+	/*facebook         : {
         id           : String,
         token        : String,
         email        : String,
         name         : String
-    }
+    },
+	google         : {
+        id           : String,
+        token        : String,
+        email        : String,
+        name         : String
+    }*/
     
 });
 userSchema.plugin(passportLocalMongoose);
