@@ -9,6 +9,8 @@ let foo = require('./controllers/footercontact');
 let login = require('./controllers/loginAuthentication');
 let forgotpassword = require('./controllers/forgotpassword');
 let resetpassword = require('./controllers/resetpassword');
+let head = require('./controllers/headercontact');
+
 
 
 
@@ -29,6 +31,7 @@ this.router.post('/footerContact',foo.FooterContact1.bind(express) );
 this.router.post('/login',passport.authenticate('local', { successRedirect: '/profile',failureRedirect: '/login',failureFlash: true }));
 this.router.post('/forgotpasscode',forgotpassword.sendForgotLink);
 this.router.post('/resetpassword',resetpassword.resetP.bind(express));
+this.router.post('/header-contact-us',head.HeaderContact.bind(express));
 
 
 }
