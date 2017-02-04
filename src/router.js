@@ -4,6 +4,8 @@ let router = express.Router();
 let passport = require('passport');
 
 let verify = require('./controllers/verify_user');
+let fp = require('./controllers/forgotpassword');
+let rp = require('./controllers/resetpassword');
 
 class Router {
 
@@ -37,13 +39,22 @@ this.router.get('/profile',(request,response) => {
 this.router.get('/thankyou',(request,response) => {
    response.render('thankyou'); 
 });
+      
+      
+this.router.get('/forgotpassword',(request,response) => {
+    response.render('forgotpswd');
+});      
  
 this.router.get('/footerContact',(request,response) => {
    response.render('contact_thankyou'); 
 });      
       
 this.router.get('/verify', verify.verifyUser.bind(express));  
-  
+this.router.get('/forgotP',rp.reset.bind(express)); 
+      
+this.router.get('/contactus',(request,response) => {
+    response.render('contact');
+}) ;
 
 this.router.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
 

@@ -7,6 +7,10 @@ let LocalStrategy = require('passport-local').Strategy;
 let reg = require('./controllers/register');
 let foo = require('./controllers/footercontact');
 let login = require('./controllers/loginAuthentication');
+let forgotpassword = require('./controllers/forgotpassword');
+let resetpassword = require('./controllers/resetpassword');
+
+
 
 class Api{
 
@@ -22,18 +26,9 @@ init(){
     
 this.router.post('/reg', reg.registerUser.bind(express)); 
 this.router.post('/footerContact',foo.FooterContact1.bind(express) );
-/*this.router.post('/loginAction', passport.authenticate('local'), function(req, res) {
-    res.redirect('/');
-	//res.render('thankyou');
-});
-  */
-  
-//this.router.post('/loginAction',login.authenticatePassport.bind(express) );
-this.router.post('/login',
-  passport.authenticate('local', { successRedirect: '/profile',
-                                   failureRedirect: '/login',
-                                   failureFlash: true })
-);
+this.router.post('/login',passport.authenticate('local', { successRedirect: '/profile',failureRedirect: '/login',failureFlash: true }));
+this.router.post('/forgotpasscode',forgotpassword.sendForgotLink);
+this.router.post('/resetpassword',resetpassword.resetP.bind(express));
 
 
 }

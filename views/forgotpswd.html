@@ -61,6 +61,9 @@
             </nav>
             <!-- login & search -->
             <div class="usercontrols navbar-right">
+                <div class="search">
+                    <a href="javascript:void(0);"><i class="fa fa-search" aria-hidden="true"></i></a>
+                </div>
                 <div class="login">
                     <a href="application.html"><i class="fa fa-user-circle" aria-hidden="true"></i><span class="text">APPLY</span></a>
                 </div>
@@ -87,34 +90,30 @@
                         <div class="col-sm-8 col-lg-6 in-block">
                             <div class="user-login">
                                 <div class="head">
-								<!--< if (message.length > 0) { %>
-        <div class="alert alert-danger"><= message %></div>
-    < } %>-->
-
                                     <div class="text-center grey">
-                                        <h2>LOGIN</h2>
+                                        <h4>FORGOT PASSWORD</h4>
                                     </div>
                                 </div>
                                 <div class="login-content">
-                                      <form id="loginForm" method="post" novalidate="" action="/login">
+                                      <form id="loginForm" method="post" novalidate="" action="/forgotpasscode">
                                                 <div class="form-group">
-                                                  <input class="form-control input-lg inputStyling reqfield" name="Email" id="signin" type="text" placeholder="Email *" >
+                                                 <!--  <input class="form-control input-lg inputStyling reqfield" name="Email" id="signin" type="text" placeholder="Email *" > -->
                                                     
                                                 </div>
                                                 <div class="form-group">
-                                                   <input id="upassword" type="password" name="password" class="form-control reqfield" placeholder="PASSWORD" required>
+                                                   <input id="upassword" type="text" name="password" class="form-control reqfield" placeholder="Enter your mail ID" required>
                                                 </div>
                                                 <br>
-                                                <input type="submit" class="btn btn-primary">SIGN IN</button>
+                                                <input type="submit" class="btn btn-primary"></input>
                                             </form>
                                             <div class="retrive-pass">
-                                                <a href="/forgotpassword">forgot password? </a>
-                                                <a href="/register">Don’t have a account?Sign up</a>
+                                               <!--  <a href="#">forgot password? </a>
+                                                <a href="register.html">Don’t have a account?Sign up</a> -->
                                             </div>
-                                            <p class="small-text">or sign in with one of these services</p>
+                                            <!-- <p class="small-text">or sign in with one of these services</p> -->
                                             <div class="social-login">
-                                                <a href="/auth/facebook" class="facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
-                                                <a href="/auth/google" class="google"><i class="fa fa-google" aria-hidden="true"></i> Google</a>
+                                                <!-- <a href="/api/facebook" class="facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
+                                                <a href="/api/google" class="google"><i class="fa fa-google" aria-hidden="true"></i> Google</a> -->
                                             </div>
                                 </div>
                             </div>
