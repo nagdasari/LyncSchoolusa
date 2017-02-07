@@ -21,20 +21,20 @@ exports.getCoursesList =  function(){
 
                    id =  item._id;
                    data.id= id;
-                  console.log("hello " +data.id);
+                 // console.log("hello " +data.id);
                    coursename = item.course_name;
                    data.coursename = coursename;
-                   console.log("hello " +data.coursename);
+                //   console.log("hello " +data.coursename);
                    courseimage = item.course_image;
                    data.courseimage = courseimage;
-                  console.log("hello" +  data.courseimage);
+               //   console.log("hello" +  data.courseimage);
                    urlname = item.url_name;
                data.urlname = urlname;
-                            console.log("hellourl" + data.urlname);
+                          //  console.log("hellourl" + data.urlname);
 
                alttext = item.alt;
                data.alttext = alttext;
-               console.log("helloalttext" + data.alttext);
+              // console.log("helloalttext" + data.alttext);
 elements.push({courseid:data.id,coursename: data.coursename,courseimage : data.courseimage,urlname: data.urlname, alttext: data.alttext});   
            //    console.log(elements.courseid);
                    resolve(elements);

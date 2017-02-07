@@ -608,5 +608,24 @@ hr.normal:after{position: absolute; content: ''; border:1px solid rgba(102,102,1
 .overflow p{
     font-size: 17px;
 }
+/*inline to external for course*/
+.margintop80{margin-top:80px;}
+.marginbottom30{margin-bottom:30px;}
+.paddingtop40{padding-top:40px;}
+.boxshadow{box-shadow: 0 0 5px #c5c5c5;}
+.marginleft40{margin-left:40px;}
+.marginleft50{margin-left:50px;}
+.margintop37{margin-top:37px;}
+.padding0{padding:0px;}
+.fontsize15{font-size: 15px;}
+.review{
+	margin-left:44px;font-size:15px;margin-top:10px;
 
+}
+.viewmore{
+	float: right;margin-top: 20px;border-radius: 12px;
+}
+
+/*end of inline to external for course*/
 /*end of aboutus*/
+.marginleft30{margin-left:30px;}

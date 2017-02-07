@@ -135,7 +135,7 @@ this.router.get('/:name', (req, res) => {
       //  console.log("sanju" +  req.url);
             subcoursemain.getModuleContent(new_url).then(function(ele2) {
               console.log(" In curses2 route" + ele2[0].title + " " + ele2[0].description + "" + ele2[0].modules.length);
-               res.render('coursesmain', { maincoursedata: ele2 });
+               res.render('coursedetails', { maincoursedata: ele2 });
           });
 
                         });      

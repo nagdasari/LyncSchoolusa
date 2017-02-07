@@ -20,43 +20,44 @@ exports.getCoursesList =  function(qid){
           if(object){
           pagetitle = object.page_title;
           data.pagetitle = pagetitle;
-       //   console.log("in subcourse" +  data.pagetitle);
+          console.log("in subcourse" +  data.pagetitle);
           subcourseid = object._id;
           data.subcourseid = subcourseid;
-         // console.log("in subcourse" +  data.subcourseid);
+          console.log("in subcourse" +  data.subcourseid);
           subcoursename = object.sub_course_name;
           data.subcoursename = subcoursename;
-        //  console.log("in subcourse" +  data.subcoursename);
+         console.log("in subcourse" +  data.subcoursename);
           subcoursedescription = object.sub_course_description;
           data.subcoursedescription = subcoursedescription;
-        //  console.log("in subcourse" +  data.subcoursedescription);
+          console.log("in subcourse" +  data.subcoursedescription);
           subcourseimage= object.sub_course_image;
           data.subcourseimage = subcourseimage;
-        //  console.log("in subcourse" +  data.subcourseimage);
+          console.log("in subcourse" +  data.subcourseimage);
            viewmoreurl = object.view_more_url;
               data.viewmoreurl = viewmoreurl;
              console.log("in subcourseurl " +  data.viewmoreurl);
 
              metatitle = object.Meta_Title;
              data.metatitle = metatitle;
-
+console.log("insubcoursemetatitle" + data.metatitle);
              metadescription = object.Meta_Description;
              data.metadescription = metadescription;
-
+console.log("insubcourses meta description" +  data.metadescription);
              metakeywords = object.Meta_keywords;
              data.metakeywords = metakeywords;
+console.log("insubcourses meta description" +  data.metakeywords);
 
              alttext = object.alt;
              data.alttext = alttext;
 
              appendtext = object.append_string;
              data.appendtext = appendtext;
-console.log("Appendtext" + data.appendtext);
+//console.log("Appendtext" + data.appendtext);
 
 title1 = object.title1;
 
 data.title1 = title1;
-console.log("hey"+ data.title1);
+//console.log("hey"+ data.title1);
           elements.push({pagetitle:data.pagetitle,subcourseid: data.subcourseid,subcoursename:data.subcoursename, subcoursedescription:data.subcoursedescription,subcourseimage:data.subcourseimage,viewmoreurl:data.viewmoreurl,metatitle: data.metatitle,metadescription: data.metadescription, metakeywords : data.metakeywords,alttext : data.alttext, appendtext: data.appendtext,title1:data.title1});
           return resolve(elements);
           }
