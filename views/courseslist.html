@@ -102,119 +102,33 @@
                     </div>
                 </div>
                 <br>
+                <% var lengthofcoursedata = coursedata.length; %>
+
                 <div class="wrapper row">
+                
                     
-                        <div class="col-sm-4">
-                            <div class="course-block eq-height">
-                                <div class="course-image">
-                                    <a href="/coursedetail?course=web-development">
-                                        <img src="img/ui-ux.jpg" alt="course">
-                                    </a>
-                                </div>
-                                <div class="courser-desc">
-                                    <div class="course-text eq-height1">
-                                        <p>
-                                        UI/UX Designer
-                                        </p>
-                                    </div>
-                                    <div class="review clearfix">
-                                        <div class="pull-left">
-                                            <img src="img/rating.jpg">
-                                        </div>
-                                        <div class="pull-right">
-                                            <p>(234 Reviews)</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-sm-4">
-                            <div class="course-block eq-height">
-                                <div class="course-image">
-                                    <a href="/coursedetail?course=cname">
-                                        <img src="img/js.jpg" alt="course">
-                                    </a>
-                                </div>
-                                <div class="courser-desc">
-                                    <div class="course-text eq-height1">
-                                        <p>
-                                            JavaScript Engineer
-                                        </p>
-                                    </div>
-                                    <div class="review clearfix">
-                                        <div class="pull-left">
-                                            <img src="img/rating.jpg">
-                                        </div>
-                                        <div class="pull-right">
-                                            <p>(234 Reviews)</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-sm-4">
-                            <div class="course-block eq-height">
-                                <div class="course-image">
-                                    <a href="/coursedetail?course=asasd">
-                                        <img src="img/devops1.jpg" alt="course">
-                                    </a>
-                                </div>
-                                <div class="courser-desc">
-                                    <div class="course-text eq-height1">
-                                        <p>
-                                            Devops
-                                        </p>
-                                    </div>
-                                    <div class="review clearfix">
-                                        <div class="pull-left">
-                                            <img src="img/rating.jpg">
-                                        </div>
-                                        <div class="pull-right">
-                                            <p>(234 Reviews)</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-sm-4">
-                            <div class="course-block eq-height">
-                                <div class="course-image">
-                                    <a href="/coursedetail?course=naveen">
-                                        <img src="img/unity .jpg" height="160px" alt="course">
-                                    </a>
-                                </div>
-                                <div class="courser-desc">
-                                    <div class="course-text eq-height1">
-                                        <p>
-                                            Mobile Development
-                                        </p>
-                                    </div>
-                                    <div class="review clearfix">
-                                        <div class="pull-left">
-                                            <img src="img/rating.jpg">
-                                        </div>
-                                        <div class="pull-right">
-                                            <p>(234 Reviews)</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    
+                    
+                    
+                   <!-- <div class="row">-->
 
-                        <div class="col-sm-4">
+              <% for(var k=0; k<lengthofcoursedata; k++){ %>
+                <% if(k==3){ %>
+                    </div>
+            <div class="wrapper row" style="margin-top: 30px;">
+
+                    <%} %>
+                     <div class="col-sm-4">
                             <div class="course-block eq-height">
                                 <div class="course-image">
-                                    <a href="/coursedetail?course=naveen">
-                                        <img src="img/cms.jpg" alt="course">
+                                    <a href="/<%= coursedata[k].urlname %>">
+                                        <img src="img/<%= coursedata[k].courseimage  %>" alt="<%= coursedata[k].alttext%>">
                                     </a>
                                 </div>
                                 <div class="courser-desc">
                                     <div class="course-text eq-height1">
                                         <p>
-                                            CMS/Web Development
+                                       <%= coursedata[k].coursename %>
                                         </p>
                                     </div>
                                     <div class="review clearfix">
@@ -227,61 +141,19 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>   
+
+            <% } %>
 
 
-                        <div class="col-sm-4">
-                            <div class="course-block eq-height">
-                                <div class="course-image">
-                                    <a href="/coursedetail?course=naveen">
-                                        <img src="img/mean (1).jpg" alt="course">
-                                    </a>
-                                </div>
-                                <div class="courser-desc">
-                                    <div class="course-text eq-height1">
-                                        <p>
-                                            MEAN STACK Development
-                                        </p>
-                                    </div>
-                                    <div class="review clearfix">
-                                        <div class="pull-left">
-                                            <img src="img/rating.jpg">
-                                        </div>
-                                        <div class="pull-right">
-                                            <p>(234 Reviews)</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-sm-4">
-                            <div class="course-block eq-height">
-                                <div class="course-image">
-                                    <a href="/coursedetail?course=naveen">
-                                        <img src="img/python.jpg" alt="course">
-                                    </a>
-                                </div>
-                                <div class="courser-desc">
-                                    <div class="course-text eq-height1">
-                                        <p>
-                                            Python
-                                        </p>
-                                    </div>
-                                    <div class="review clearfix">
-                                        <div class="pull-left">
-                                            <img src="img/rating.jpg">
-                                        </div>
-                                        <div class="pull-right">
-                                            <p>(234 Reviews)</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
+
             </div>
-        </div>
+
+                    
+                            </div>
+                        </div>
+             
         <footer>
     <div class="footer">
         <div class="wrapper">
