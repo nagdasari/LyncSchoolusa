@@ -8,14 +8,14 @@ let passportLocalMongoose = require('passport-local-mongoose');
 let userSchema  = mongoose.Schema({
     firstname : {
         type:String,
-        unique:false
-       
+        unique:false,
+       default:''
     },
     
     lastname : {
         type:String,
-        unique:false
-      
+        unique:false,
+        default:''
     },
     
     email : {
@@ -62,6 +62,11 @@ let userSchema  = mongoose.Schema({
     createdat :{
         type: String,
         unique:false
+    },
+	username :{
+        type: String,
+        unique:false,
+		default: "User"
     },
 	id:{type:String},
 	token:{type:String}
