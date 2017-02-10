@@ -78,7 +78,7 @@ this.router.get('/contactus',(request,response) => {
 
 this.router.get('/profileN',(request,response) => {
 	console.log("User email from session"+request.session.passport.user.email);
-	 response.render('profile',{ name: request.session.passport.user.firstname}); 
+	 response.render('homesource.ejs',{ name: request.session.passport.user.firstname}); 
 });      
 
 
