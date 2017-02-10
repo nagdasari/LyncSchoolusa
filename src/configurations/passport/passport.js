@@ -40,7 +40,7 @@ module.exports = function(passport) {
 
                         } else {
 
-                            return done(null, user,res.send({ success : true, user : user.firstname }))
+                            return done(null, user)
                         }
                     })
                 });
