@@ -2,6 +2,10 @@
 let express = require('express');
 let router = express.Router();
 let passport = require('passport');
+//var express = require('express');
+//var bodyParser = require('body-parser'); // for reading POSTed form data into `req.body`
+let expressSession = require('express-session');
+
 
 let verify = require('./controllers/verify_user');
 let fp = require('./controllers/forgotpassword');
@@ -68,12 +72,29 @@ this.router.get('/contactus',(request,response) => {
     response.render('contact');
 }) ;
 
+
+
+
+
+this.router.get('/profileN',(request,response) => {
+	console.log("User email from session"+request.session.passport.user.email);
+	 response.render('profile',{ name: request.session.passport.user.firstname}); 
+});      
+
+
+
+
+
+
+
+
+
 this.router.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
 
     // handle the callback after facebook has authenticated the user
 this.router.get('/auth/facebook/callback',
         passport.authenticate('facebook', {
-            successRedirect : '/profile',
+            successRedirect : '/profileN',
             failureRedirect : '/login'
         }));
 
@@ -99,7 +120,8 @@ this.router.get('/auth/google', passport.authenticate('google', { scope : ['prof
     // the callback after google has authenticated the user
 this.router.get('/auth/google/callback',
             passport.authenticate('google', {
-                    successRedirect : '/profile',
+                    //successRedirect : ['/profile',user:req.user.name],
+					successRedirect : '/profileN',
                     failureRedirect : '/login'
             }));
       

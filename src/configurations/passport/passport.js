@@ -7,7 +7,8 @@ let GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 //class PassportConfigs{
 module.exports = function(passport) {
         passport.serializeUser(function(user, done) {
-            done(null, user);
+          console.log(user);
+		  done(null, user);
         });
 
         passport.deserializeUser(function(user, done) {
@@ -39,7 +40,7 @@ module.exports = function(passport) {
 
                         } else {
 
-                            return done(null, user)
+                            return done(null, user,res.send({ success : true, user : user.firstname }))
                         }
                     })
                 });
