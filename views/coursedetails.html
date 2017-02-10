@@ -112,8 +112,47 @@
             <div class="course-cards-expand syllabus clearfix">
                 <h3><%= maincoursedata[0].subtitle %></h3>
                 <% var len = maincoursedata[0].modules.length %>
+                    <div class="row">
+                    
+                    
+                    <% for(var k=0; k<len; k++){ %>
+                                <%  if(k%2==0){%>
+                        </div>
+                    
+                    
+                    
+                    
+                    
+                    <div class="row" > <hr class="normal">
 
-                <hr class="normal">
+                            <%}%>
+                                <div class="col-md-6 course-desc">
+                    
+                          <div class="syllabuscont marginleft30">
+                        <p class="small-text head">MODULE
+                                        <%= maincoursedata[0].modules[k].modulenumber %>
+                                    </p>
+                                    <div class="row">
+                                <div class="col-sm-12">
+                                    <p><%= maincoursedata[0].modules[k].moduleheading %></div >
+                                <div class="col-sm-12">
+                                    <p>    <%= maincoursedata[0].modules[k].moduledescription %>
+                                    </p>
+                                </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                <% } %>
+                        </div>
+
+                            
+                  <hr class="normal">
+                  
+                    
+                    
+     <!--               
+                    
+                    
                 <div class="row">
                     
                     <div class="col-md-6 course-desc">
@@ -317,6 +356,7 @@ gfdgfsd                                    </p>
                 </div>
                 </div>
                     <hr class="normal">
+-->
                 
                         
                             <br>
