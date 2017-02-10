@@ -629,3 +629,8 @@ hr.normal:after{position: absolute; content: ''; border:1px solid rgba(102,102,1
 /*end of inline to external for course*/
 /*end of aboutus*/
 .marginleft30{margin-left:30px;}
+
+#menu1 li a {
+    background-color: transparent;
+    color: black;
+}
