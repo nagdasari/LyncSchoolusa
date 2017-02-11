@@ -1,0 +1,156 @@
+
+<div class="contentarea">
+       
+        <my-app-header>
+<header>
+    <div class="dashboardhead text-center">
+        <div class="clearfix">
+            <div class="menu">
+                <a href="#"><i aria-hidden="true" class="fa fa-bars"></i></a>
+            </div>
+            <div class="notification">
+                <a href="#"><img alt="alert" class="fa desktop" src="img/dashboardbell.png">
+                <img alt="alert" class="fa mobile" src="img/dashboardbell-mobile.png">
+                </a>
+            </div>
+            <div class="logo">
+                <img src="img/dashboardlogo.png">
+            </div>
+            <div class="usermenu">
+                <a href="/logout"><img alt="logout" class="fa desktop" src="img/dashboardlogout.png">
+                <img alt="logout" class="fa mobile" src="img/dashboardlogoutmobile.png">
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+</my-app-header>
+        <app-breadcrumb>
+<div class="custom-pagination">
+    <ul class="list-unstyled">
+        <!--template bindings={}-->
+
+        <!--template bindings={}--><li class="disabled">
+          <div class="disablelayer"></div>
+      <a href="javascript:void(0);">Home</a>
+        </li>
+    </ul>
+</div>
+</app-breadcrumb>
+
+
+
+ <div class="row">
+               <div class="col-md-12 padding50">
+                             <div class="ios">
+
+
+<h4 style="font-weight: 400; text-align: center;">APPLICATION FORM</h4>
+<form style="margin-top: 60px;" enctype="multipart/form-data" id="myform" name="myform" onsubmit="return onSubmit()" action="api/register" method="POST">
+<div class="row">
+<div class="col-sm-offset-1 col-sm-5">
+<div class="form-group">
+<input class="form-control input-lg inputStyling reqfield" id="inputlg" name="fname" type="text" placeholder="First Name" style="box-shadow: none;">
+<span id="errorname" style="font-family: sans-serif;color: red;">
+</span>
+</div>
+</div>
+<div class="col-sm-5">
+<div class="form-group">
+<input class="form-control input-lg inputStyling reqfield" id="inputlg" name="lname" type="text" placeholder="Last Name" style="box-shadow: none;">
+<span id="errorlname" style="font-family: sans-serif;color: red;"></span>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-offset-1 col-sm-5">
+<div class="form-group">
+<input class="form-control input-lg inputStyling reqfield" id="inputlg" name="email" type="text" placeholder="Email" style="box-shadow: none;">
+<span id="errorEmail" style="font-family: sans-serif;color: red;"></span>
+</div>
+</div>
+<div class="col-sm-5">
+<div class="form-group">
+<input class="form-control input-lg inputStyling reqfield" id="inputlg" name="mobile" type="text" placeholder="Mobile Number" style="box-shadow: none;">
+<span id="errorPhone" style="font-family: sans-serif;color:red;"></span>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-offset-1 col-sm-10">
+<div class="form-group">
+<input class="form-control input-lg inputStyling " id="inputlg" name="add" type="text" placeholder="Address" style="box-shadow: none;">
+<span id="errorAddress" style="font-family: sans-serif;color: red;"></span>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-offset-1 col-sm-5">
+<div class="form-group">
+<input class="form-control input-lg inputStyling " id="inputlg" name="city" type="text" placeholder="City" style="box-shadow: none;">
+<span id="errorCity" style="font-family: sans-serif;color: red;"></span>
+</div>
+</div>
+<div class="col-sm-5">
+<div class="form-group">
+<input class="form-control input-lg inputStyling " id="inputlg" name="state" type="text" placeholder="State" style="box-shadow: none;">
+<span id="errorState" style="font-family: sans-serif;color: red;"></span>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-offset-1 col-sm-10">
+<div class="form-group">
+<label for="sel2">Select Course</label>
+<select class="form-control input-lg" id="sel2" name="course">
+<option>Mobile Development</option>
+<option>Mean Development</option>
+<option>CMS Development</option>
+<option>Devops</option>
+<option>UI/UX Development</option>
+<option>JavaScript Engineer</option>
+</select>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-offset-1 col-sm-10">
+<div class="form-group">
+<label for="sel2">Select Program</label>
+<select class="form-control input-lg" id="sel2" name="program">
+<option>Basic</option>
+<option>Intermediate</option>
+<option>Advanced</option>
+</select>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-offset-1 col-sm-5">
+<h6>Please upload your resume :</h6>
+</div>
+<div class="col-sm-4">
+ 
+<label class="btn">
+<input type="file" name="filen" id="filen" class="reqfield">
+</label>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-offset-5 col-sm-7">
+<sup>*</sup>
+<p style="font-size: 15px;">upload only doc,docx and pdf formats of size less than 2MB.</p>
+</div>
+</div>
+<div class="row" style="margin-bottom: 20px;">
+<div class="col-sm-offset-10 col-sm-2">
+ 
+<input type="submit" id="submit" value="submit">
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>

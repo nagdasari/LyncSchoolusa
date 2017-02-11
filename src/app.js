@@ -30,7 +30,7 @@ this.middlewares();
 
 this.routes();
 this.mongoConnect();
-this.initSessionStorage();
+//this.initSessionStorage();
    }
 
 config(){

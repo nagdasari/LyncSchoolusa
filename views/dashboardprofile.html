@@ -1,0 +1,178 @@
+
+<div class="contentarea">
+        <my-app-header>
+<header>
+    <div class="dashboardhead text-center">
+        <div class="clearfix">
+            <div class="menu">
+                <a href="#"><i aria-hidden="true" class="fa fa-bars"></i></a>
+            </div>
+            <div class="notification">
+                <a href="#"><img alt="alert" class="fa desktop" src="img/dashboardbell.png">
+                <img alt="alert" class="fa mobile" src="img/dashboardbell-mobile.png">
+                </a>
+            </div>
+            <div class="logo">
+                <img src="img/dashboardlogo.png">
+            </div>
+            <div class="usermenu">
+                <a href="/logout"><img alt="logout" class="fa desktop" src="img/dashboardlogout.png">
+                <img alt="logout" class="fa mobile" src="img/dashboardlogoutmobile.png">
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+</my-app-header>
+        <app-breadcrumb>
+<div class="custom-pagination">
+    <ul class="list-unstyled">
+        <!--template bindings={}-->
+
+        <!--template bindings={}--><li class="disabled">
+          <div class="disablelayer"></div>
+      <a href="javascript:void(0);">Home</a>
+        </li>
+    </ul>
+</div>
+</app-breadcrumb>
+
+<div class="content">
+            <router-outlet></router-outlet><profile-component>
+<div class="row">
+ 
+
+  
+  <div class="col-sm-4">
+    <div class="block-container profile">
+      <div class="profile-container">
+        <div class="text-center">
+          <div class="user-img">
+            <span>
+              <!--template bindings={}--><img alt="userpic" src="img/dashboardcontacts.png">
+                  <!--template bindings={}-->
+                </span>
+                <span class="user-img-overlay">
+                  <p>
+                    <a href="javascript:void(0);"><i aria-hidden="true" class="fa fa-upload"></i></a>|<a href="javascript:void(0);"><i aria-hidden="true" class="fa fa-trash-o"></i></a>
+              </p>                
+            </span>
+            <form class="ng-untouched ng-pristine ng-valid">
+              <input class="form-control" name="file" type="file">
+              </form>
+          </div>          
+        </div>
+        <hr>
+        <div class="user-proifile-content">
+          <ul class="list-unstyled">
+            <li><i aria-hidden="true" class="fa fa-user-o"></i>User Name: Naveen Kumar</li>
+            <li><i aria-hidden="true" class="fa fa-envelope-o"></i>Email Id: naveen@digital-lync.com</li>
+            <li><i aria-hidden="true" class="fa fa-mobile"></i>Mobile Number: </li>
+            <li><i aria-hidden="true" class="fa fa-map-marker"></i>City: </li>
+          </ul>         
+        </div>
+      </div>
+
+      <div class="profile-container edit">
+        <div class="user-proifile-content">
+          <div class="profileform">
+            <form class="ng-untouched ng-pristine ng-valid">
+              <div class="form-group">
+                <label class="sr-only" for="name">First Name</label>
+                <i aria-hidden="true" class="fa fa-user-o"></i>
+                <input class="form-control ng-untouched ng-pristine ng-valid" name="firstName" placeholder="First Name" type="text">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="name">Last Name</label>
+                <i aria-hidden="true" class="fa fa-user-o"></i>
+                <input class="form-control ng-untouched ng-pristine ng-valid" name="lastName" placeholder="Last Name" type="text">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="exampleInputEmail1">Email address</label>
+                <i aria-hidden="true" class="fa fa-envelope-o"></i>
+                <input class="form-control ng-untouched ng-pristine ng-valid" id="exampleInputEmail1" name="email" placeholder="Email" type="email">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="mobile">Mobile Number</label>
+                <i aria-hidden="true" class="fa fa-mobile"></i>
+                <input class="form-control ng-untouched ng-pristine ng-valid" id="mobile" name="phone" placeholder="Mobile Number" type="text">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="location">Location</label>
+                <i aria-hidden="true" class="fa fa-map-marker"></i>
+                <input class="form-control ng-untouched ng-pristine ng-valid" id="city" name="city" placeholder="City" type="text">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="block-edit">
+        <a href="javascript:void(0);">
+          <i aria-hidden="true" class="fa fa-pencil-square-o edit"></i>
+          <i aria-hidden="true" class="fa fa-floppy-o save"></i>
+        </a>
+      </div>   
+        
+    </div>
+    <br>
+    <div class="block-container social">
+      <div class="clearfix">
+      <ul class="list-unstyled profile-progress">
+        <li><p>07</p><p class="text blue">Modules</p></li>
+        <li><p>07</p><p class="text yellow">Tests</p></li>
+        <li><p>07</p><p class="text red">Assignments</p></li>
+      </ul>
+      </div>
+      <hr class="clearfix">
+      <p><b>Professional Website Links</b></p>
+      <ul class="list-unstyled social-links">
+        <li><a class="linkedin" href="#"><i aria-hidden="true" class="fa fa-linkedin-square"></i></a></li>
+        <li><a class="google" href="#"><i aria-hidden="true" class="fa fa-google-plus-square"></i></a></li>
+        <li><a class="twitter" href="#"><i aria-hidden="true" class="fa fa-twitter-square"></i></a></li>
+      </ul>
+      <hr>
+      <p><b>Upload Resume</b></p>
+      <div class="resume-upload">
+        <button class="btn btn-primary">Upload</button>
+        <ul class="list-unstyled resume-upload-files">
+          <li>asdasd<span class="file-controls"><a href="#"><i aria-hidden="true" class="fa fa-times"></i></a><a href="#"><i aria-hidden="true" class="fa fa-upload"></i></a></span></li>
+        </ul>
+      </div>
+      <p class="small-text">*PDF format only Max 5Mb</p>
+    </div>
+  </div>
+
+
+ <div class="col-sm-8 padding50"> 
+    <div class="block-container course">
+      <div class="course-detail">
+        <h6>Course Detail</h6>
+        <p>IOS development is in Progress</p>
+        <h6>Program</h6>
+        <p>Basic</p>
+        <h6>About</h6>
+        <form class="ng-untouched ng-pristine ng-valid">
+        <textarea class="form-control" rows="5"></textarea>
+        </form>
+      </div>
+      <a href="#!/dashboardprofileedit"><button type="button" class=" btn btn-warning block-edit margin30">
+       EDIT
+     </button></a>
+      
+    </div>
+    <br>
+    <div class="block-container education">
+      <h6>Education Details</h6>
+      <p>Graduation : </p>
+      <p>Intermediate : </p>
+      <p>SSC : </p>
+      <hr>
+      <h6>Professional Details</h6>
+    </div>
+  </div>
+
+
+
+</div>
+</profile-component>
+        </div>

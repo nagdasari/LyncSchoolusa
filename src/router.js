@@ -127,7 +127,9 @@ this.router.get('/logout', function(req, res) {
         res.redirect('/');
     });
  
-
+ this.router.get('/user',(request,response)=>{
+        response.render('dashboardsidenavres');
+    })  ;
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
@@ -214,7 +216,7 @@ response.render('coursedetails', { maincoursedata: ele2, name:request.session.pa
      /* added routes for courses  dynamic */ 
       
       
-      
+   
       
 
  
