@@ -63,8 +63,7 @@ data.title1 = title1;
            }
 
           elements.push({title: title, description:description,image:image,subtitle:subtitle,modules:module_elements, metatitle:metatitle, metakeywords:metakeywords, metadescription:metadescription, alttext:alttext,title1:title1});
-//          elements.push({pagetitle:data.pagetitle,subcourseid: data.subcourseid,subcoursename:data.subcoursename, subcoursedescription:data.subcoursedescription,subcoursesubtitle:data.subcourseimage});
-          return resolve(elements);
+   return resolve(elements);
       } else{
           console.log(error);
           return reject(error);

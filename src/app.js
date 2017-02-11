@@ -94,53 +94,6 @@ mongoConnect(){
     
   }
 
-initSessionStorage(){
-/*app.use(session({  
-  store: new RedisStore({
-    url: config.redisStore.url
-  }),
-  secret: config.redisStore.secret,
-  resave: false,
-  saveUninitialized: false
-}))
-app.use(passport.initialize())  
-app.use(passport.session())
-*/
-//passport.use(new LocalStrategy(User.authenticate()));
-/*passport.use(new LocalStrategy( {
-    usernameField: 'Email',
-    passwordField: 'password',
-	//passReqToCallback : true
-  }, 
-  function(username, password, done) {
-	  console.log(username);
-    User.findOne({ email: username }, function (err, user) {
-      if (err) {
-		  console.log(err);
-        return done(err)
-      }
-      if (!user) {
-        return done(null, false,req.flash('login', 'That email is wrong.'))
-      }
-      if (user.password!=password  ) {
-        return done(null, false,req.flash('login', 'Oops !! Wrong password.'))
-      }
-	  else{
-		  passport.serializeUser(function(user, done) {
-  done(null, user);
-});
-
-passport.deserializeUser(function(user, done) {
-  done(null, user);
-});
-      return done(null, user)}
-    })
-  }
-));*/
-//passport.serializeUser(User.serializeUser());
-//passport.deserializeUser(User.deserializeUser());
-
-}
 
 
 
