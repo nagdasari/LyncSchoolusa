@@ -67,9 +67,36 @@
                 <div class="search">
                     <a href="javascript:void(0);"><i class="fa fa-search" aria-hidden="true"></i></a>
                 </div>
+<!--
                 <div class="login">
                     <a href="/login"><i class="fa fa-lock" aria-hidden="true"></i><span class="text">LOGIN</span></a>
                 </div>
+-->
+                
+                
+                <% if(name!=""){ %>
+                   
+                   
+                  <div class="login">
+                        <a href="/login" class="dropdown-toggle" id="drop4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-lock" aria-hidden="true"></i><span class="text"><%= name; %></span></a>
+                        <ul class="dropdown-menu" id="menu1" aria-labelledby="drop4">
+                            <li><a href="/contact">My Account</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
+                   
+                <% } else { %>
+                   
+                   
+                   
+                  <div class="login">
+                     <a href="/login"><i class="fa fa-lock" aria-hidden="true"></i><span class="text">LOGIN</span></a>
+                  </div>
+                   
+                   <% } %>
+                
+                
+                
             </div>
         </div>
     </div>

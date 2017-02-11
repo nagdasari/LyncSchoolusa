@@ -59,13 +59,25 @@ else
 });       
   
 this.router.get('/about',(request,response) => {
-   response.render('about'); 
+    if(request.session.passport!=undefined)
+	if(request.session.passport.user!=undefined)
+   response.render('about',{ name: request.session.passport.user.firstname}); 
+else
+	response.render('about',{name:""});
+else
+	response.render('about',{name:""});
 });       
           
       
 this.router.get('/thankyou',(request,response) => {
-   response.render('thankyou'); 
-});
+    if(request.session.passport!=undefined)
+	if(request.session.passport.user!=undefined)
+   response.render('thankyou',{ name: request.session.passport.user.firstname}); 
+else
+	response.render('about',{name:""});
+else
+	response.render('about',{name:""});
+});       
       
       
 this.router.get('/forgotpassword',(request,response) => {
@@ -137,12 +149,16 @@ this.router.get('/auth/google/callback',
             }));
       
  /* added routes for courses  dynamic */     
-this.router.get('/courses', (req, res) => {
+this.router.get('/courses', (request, response) => {
             courses.getCoursesList().then(function(ele) {
                 // for(var t =0; t<ele.length; t++){
                 //console.log(" In curses route" +  ele[t].id  + " " + ele[t].coursename + "" );
                 //}
-                res.render('courseslist', { coursedata: ele });
+                
+if(request.session.passport!=undefined)
+	if(request.session.passport.user!=undefined)                  response.render('courseslist', { coursedata: ele, name: request.session.passport.user.firstname });
+                else
+                    response.render('courseslist',{coursedata:ele,name:""});
             }).catch(function(err) {
                 console.log("In courses route" + err);
 
@@ -150,15 +166,20 @@ this.router.get('/courses', (req, res) => {
         });
 
       
-this.router.get('/:name', (req, res) => {
-            var raw_url = req.url.toString();
+this.router.get('/:name', (request, response) => {
+            var raw_url = request.url.toString();
          var  new_url =  raw_url.replace('/','');
            subcourses.getCoursesList(new_url).then(function(ele1) {
-                for (var t = 0; t < ele1.length; t++) {
-                    console.log(" In curses1 route" + ele1[t].subcourseid + " " + ele1[t].subcoursename + "");
-                }
+//                for (var t = 0; t < ele1.length; t++) {
+//                    console.log(" In curses1 route" + ele1[t].subcourseid + " " + ele1[t].subcoursename + "");
+//                }
+               
+if(request.session.passport!=undefined)
+	if(request.session.passport.user!=undefined)               
+    response.render('subcourses', { subcoursedata: ele1,name: request.session.passport.user.firstname  });
+               else
+	response.render('subcourses',{ subcoursedata: ele1,name: ""  });
 
-                res.render('subcourses', { subcoursedata: ele1 });
 
 
             }).catch(function(err) {
@@ -169,15 +190,22 @@ this.router.get('/:name', (req, res) => {
         });
 
 
-        this.router.get('/training/:name1', (req,res)=>{
+        this.router.get('/training/:name1', (request,response)=>{
 
-            var raw_url = req.url.toString().split("/");
+            var raw_url = request.url.toString().split("/");
             var new_url = raw_url[2];
             console.log("here" +  new_url);
       //  console.log("sanju" +  req.url);
             subcoursemain.getModuleContent(new_url).then(function(ele2) {
-              console.log(" In curses2 route" + ele2[0].title + " " + ele2[0].description + "" + ele2[0].modules.length);
-               res.render('coursedetails', { maincoursedata: ele2 });
+                
+                
+//              console.log(" In curses2 route" + ele2[0].title + " " + ele2[0].description + "" + ele2[0].modules.length);
+                
+                if(request.session.passport!=undefined)
+	if(request.session.passport.user!=undefined)      
+response.render('coursedetails', { maincoursedata: ele2, name:request.session.passport.user.firstname });
+                else
+         response.render('coursedetails',{maincoursedata:ele2, name:""}) ;          
           });
 
                         });      
