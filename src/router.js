@@ -26,7 +26,14 @@ class Router {
   init(){
 
 this.router.get('/', (request,response) => {
-response.render('homesource');
+if(request.session.passport!=undefined)
+	if(request.session.passport.user!=undefined)
+   response.render('homesource.ejs',{ name: request.session.passport.user.firstname}); 
+else
+	response.render('homesource.ejs',{name:""});
+
+else
+	response.render('homesource.ejs',{name:""});
 
     });
       
@@ -44,7 +51,15 @@ this.router.get('/profile',(request,response) => {
 });   
 
 this.router.get('/program',(request,response) => {
-   response.render('programs'); 
+	if(request.session.passport!=undefined)
+	if(request.session.passport.user!=undefined)
+   response.render('programs.ejs',{ name: request.session.passport.user.firstname}); 
+else
+	response.render('programs.ejs',{name:""});
+
+else
+	response.render('programs.ejs',{name:""});
+
 });       
   
 this.router.get('/about',(request,response) => {
@@ -69,14 +84,14 @@ this.router.get('/verify', verify.verifyUser.bind(express));
 this.router.get('/forgotP',rp.reset.bind(express)); 
       
 this.router.get('/contactus',(request,response) => {
-    response.render('contact');
+    response.render('contact',{ name: request.session.passport.user.firstname});
 }) ;
 
 
 
 
 
-this.router.get('/profileN',(request,response) => {
+this.router.get('/profileN',isLoggedIn,(request,response) => {
 	console.log("User email from session"+request.session.passport.user.email);
 	 response.render('homesource.ejs',{ name: request.session.passport.user.firstname}); 
 });      
