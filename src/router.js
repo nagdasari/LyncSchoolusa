@@ -31,10 +31,8 @@ if(request.session.passport!=undefined)
    response.render('homesource.ejs',{ name: request.session.passport.user.firstname}); 
 else
 	response.render('homesource.ejs',{name:""});
-
 else
 	response.render('homesource.ejs',{name:""});
-
     });
       
 this.router.get('/login',(request,response) => {
@@ -56,10 +54,8 @@ this.router.get('/program',(request,response) => {
    response.render('programs.ejs',{ name: request.session.passport.user.firstname}); 
 else
 	response.render('programs.ejs',{name:""});
-
 else
 	response.render('programs.ejs',{name:""});
-
 });       
   
 this.router.get('/about',(request,response) => {
