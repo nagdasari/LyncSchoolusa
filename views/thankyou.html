@@ -43,14 +43,14 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="programs.html">Programs</a></li>
-                            <li><a href="courseslist.html">Courses</a></li>
+                            <li><a href="/program">Programs</a></li>
+                            <li><a href="/courses">Courses</a></li>
                             <li><a href="#">Blog</a></li>
                             <li class="dropdown">
                             <a href="#" class="dropdown transparent" data-toggle="dropdown">Company  &#9662;</a>
                             <ul class="dropdown-menu">
-                              <li><a href="contact.html">Contact us</a></li>
-                              <li><a href="Aboutus.html">About Us</a></li>
+                              <li><a href="/contactus">Contact us</a></li>
+                              <li><a href="/about">About Us</a></li>
                             </ul>
                             </li>
                         </ul>
@@ -61,9 +61,37 @@
             </nav>
             <!-- login & search -->
             <div class="usercontrols navbar-right">
+<!--
                 <div class="login">
                     <a href="application.html"><i class="fa fa-user-circle" aria-hidden="true"></i><span class="text">APPLY</span></a>
                 </div>
+-->
+                
+                
+                
+                <% if(name!=""){ %>
+                               
+                   
+                  <div class="login">
+                        <a href="/login" class="dropdown-toggle" id="drop4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-lock" aria-hidden="true"></i><span class="text"><%= name; %></span></a>
+                        <ul class="dropdown-menu" id="menu1" aria-labelledby="drop4">
+                            <li><a href="/contact">My Account</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
+                   
+                <% } else { %>
+                   
+                   
+                   
+                  <div class="login">
+                     <a href="/login"><i class="fa fa-lock" aria-hidden="true"></i><span class="text">LOGIN</span></a>
+                  </div>
+                   
+                   <% } %>
+                
+                
+                
             </div>
         </div>
     </div>

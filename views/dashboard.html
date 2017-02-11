@@ -1,0 +1,104 @@
+<div class="contentarea">
+        <my-app-header>
+<header>
+    <div class="dashboardhead text-center">
+        <div class="clearfix">
+            <div class="menu">
+                <a href="#"><i aria-hidden="true" class="fa fa-bars"></i></a>
+            </div>
+            <div class="notification">
+                <a href="#"><img alt="alert" class="fa desktop" src="img/dashboardbell.png">
+                <img alt="alert" class="fa mobile" src="dashboardbell-mobile.png">
+                </a>
+            </div>
+            <div class="logo">
+                <img src="img/dashboardlogo.png">
+            </div>
+            <div class="usermenu">
+                <a href="/logout"><img alt="logout" class="fa desktop" src="img/dashboardlogout.png">
+                <img alt="logout" class="fa mobile" src="dashboardlogoutmobile.png">
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+</my-app-header>
+        <app-breadcrumb>
+<div class="custom-pagination">
+    <ul class="list-unstyled">
+        <!--template bindings={}-->
+
+        <!--template bindings={}--><li class="disabled">
+          <div class="disablelayer"></div>
+      <a href="javascript:void(0);">Home</a>
+        </li>
+    </ul>
+</div>
+</app-breadcrumb>
+        <div class="content">
+            <router-outlet></router-outlet><home-component>
+<div class="dashboard-content">
+                                <div class="row">
+                                    <div class="col-sm-12 positioninherit">
+                                        <div class="course-completed-progress-block">
+                                            <h3>Course</h3>
+                                            <p>iOS development- Chapter4</p>
+                                            <ul class="course-progress list-unstyled">
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                                <li></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="widget-block green">
+                                            <p>You have a new</p>
+                                            <h5>TEST</h5>
+                                            <a href="#">Start</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="widget-block yellow">
+                                            <p>You have a new</p>
+                                            <h5>ASSIGNMENT</h5>
+                                            <a href="#">Start</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="attendence-widget text-center clearfix">
+                                            <div class="attendence-widget-graph">
+                                                <img src="img/dashboardpercentage.png">
+                                            </div>
+                                            <h6>ATTENDENCE</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="graph text-center">
+                                            <h6>Tests</h6>
+                                            <img class="img-responsive" src="img/dashboardgraph.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="graph text-center">
+                                            <h6>Assignments</h6>
+                                            <img class="img-responsive" src="img/dashboardgraph.jpg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+</home-component>
+        </div>
+    </div>

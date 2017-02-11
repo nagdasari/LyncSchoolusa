@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title></title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+
+      <link rel="stylesheet" type="text/css" href="css/dashboardside.css">
+       <link rel="stylesheet" type="text/css" href="css/dashboardtest.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          <script src="js/dashboardangular.js"></script>
+          <script src="js/dashboardangular-route.js"></script>
+          <script src="js/dashboardcontroller.js"></script>
+          <script src="js/dashboardvalidation.js"></script>
+          <style>
+            .margn{
+              margin:20px 0px 20px 0px;
+
+            }
+          </style>
+   </head>
+ <!--   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous"> -->
+<body ng-app="dashboard">
+   
+<nav class="navbar navbar-inverse sidebar bgcolor" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header bgclr2DCC70">
+      <div class="user margn">
+        <span><!--template bindings={}--><img alt="userpic" class="mbt25" routerlink="/" src="img/dashboarduser.png" width="60px"></span>
+        <span class="userid white"><!--template bindings={}-->Student</span>
+        
+    </div>
+      
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+         
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+         <ul class="nav navbar-nav font16px">
+            <li class="active"><a href="#!/dashboard">Dashboard<span class="pull-right hidden-xs showopacity glyphicon glyphicon-home bordernone"></span></a></li>
+
+            <li class="active"><a href="#!/dashboardapplication">Application<span class="pull-right hidden-xs showopacity glyphicon glyphicon-list-alt bordernone"></span></a></li>
+
+            <li ><a href="#!/dashboardcourseclick1">Course<span class="pull-right hidden-xs showopacity glyphicon glyphicon-edit bordernone"></span></a></li>
+
+
+            <li ><a href="#!/dashboardexamclick1">Exam1<span class="pull-right hidden-xs showopacity glyphicon glyphicon-time bordernone"></span></a></li>
+
+            <li ><a href="#!/dashboardexamover">Exam2<span class="pull-right hidden-xs showopacity glyphicon glyphicon-time bordernone"></span></a></li>
+
+            
+
+            <li ><a href="#!/dashboardasgmntclick1">Assignment<span class="pull-right hidden-xs showopacity glyphicon glyphicon-tasks bordernone"></span></a></li>
+
+             <li ><a href="#!/dashboardprofile">Profile<span class="pull-right hidden-xs showopacity glyphicon glyphicon-user bordernone"></span></a></li>
+
+              
+             <li ><a href="#!/dashboardsettings">settings<span class="pull-right hidden-xs showopacity glyphicon glyphicon-cog bordernone"></span></a></li>
+
+            
+          </ul>
+      </div>
+   </div>
+</nav>
+<div class="main">
+<ng-view>
+     
+
+</ng-view>
+</div>
+</div>
+
+<script type="text/javascript">
+       function htmlbodyHeightUpdate(){
+      var height3 = $( window ).height()
+      var height1 = $('.nav').height()+50
+      height2 = $('.main').height()
+      if(height2 > height3){
+         $('html').height(Math.max(height1,height3,height2)+10);
+         $('body').height(Math.max(height1,height3,height2)+10);
+      }
+      else
+      {
+         $('html').height(Math.max(height1,height3,height2));
+         $('body').height(Math.max(height1,height3,height2));
+      }
+      
+   }
+   $(document).ready(function () {
+      htmlbodyHeightUpdate()
+      $( window ).resize(function() {
+         htmlbodyHeightUpdate()
+      });
+      $( window ).scroll(function() {
+         height2 = $('.main').height()
+         htmlbodyHeightUpdate()
+      });
+   });
+</script>
+  <script type="text/javascript" src="js/dashboardtest.js"></script>
+   </body>
+</html>

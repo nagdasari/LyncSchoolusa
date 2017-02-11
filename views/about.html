@@ -51,7 +51,7 @@
                             <li>
                                 <a href="#" class="dropdown-toggle" id="drop4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Company <span class="caret"></span> </a>
                                 <ul class="dropdown-menu" id="menu1" aria-labelledby="drop4">
-                                    <li><a href="/contact">Contact Us</a></li>
+                                    <li><a href="/contactus">Contact Us</a></li>
                                     <li><a href="/about">About</a></li>
                                 </ul>
                             </li>
@@ -66,9 +66,41 @@
                 <div class="search">
                     <a href="javascript:void(0);"><i class="fa fa-search" aria-hidden="true"></i></a>
                 </div>
-                <div class="login">
+              <!--  <div class="login">
                     <a href="/login"><i class="fa fa-lock" aria-hidden="true"></i><span class="text">LOGIN</span></a>
-                </div>
+                </div>  -->
+                
+                
+                
+                
+                <% if(name!=""){ %>
+                               
+                   
+                  <div class="login">
+                        <a href="/login" class="dropdown-toggle" id="drop4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-lock" aria-hidden="true"></i><span class="text"><%= name; %></span></a>
+                        <ul class="dropdown-menu" id="menu1" aria-labelledby="drop4">
+                            <li><a href="/contact">My Account</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>
+                   
+                <% } else { %>
+                   
+                   
+                   
+                  <div class="login">
+                     <a href="/login"><i class="fa fa-lock" aria-hidden="true"></i><span class="text">LOGIN</span></a>
+                  </div>
+                   
+                   <% } %>
+                   
+                
+                
+                
+                
+                
+                
+                
             </div>
         </div>
     </div>
@@ -197,7 +229,7 @@
                             <li><a href="/program"><i class="fa fa-angle-right" aria-hidden="true"></i>Programs</a></li>
                             <li><a href="/about"><i class="fa fa-angle-right" aria-hidden="true"></i>Company</a></li>
                             <li><a href="/blog"><i class="fa fa-angle-right" aria-hidden="true"></i>Blog</a></li>
-                            <li><a href="/contact"><i class="fa fa-angle-right" aria-hidden="true"></i>Connect</a></li>
+                            <li><a href="/contactus"><i class="fa fa-angle-right" aria-hidden="true"></i>Connect</a></li>
                         </ul>
                     </div>
                     <div class="col-sm-3">
