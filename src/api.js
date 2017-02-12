@@ -32,7 +32,7 @@ this.router.post('/login',passport.authenticate('local', { successRedirect: '/pr
 this.router.post('/forgotpasscode',forgotpassword.sendForgotLink);
 this.router.post('/resetpassword',resetpassword.resetP.bind(express));
 this.router.post('/header-contact-us',head.HeaderContact.bind(express));
-this.router.post('/users/dashboard/apply',(request,response) => {
+this.router.post('/api/register',(request,response) => {
    console.log("hello naveen") ;
 });
 
