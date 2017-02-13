@@ -17,6 +17,29 @@
           <script src="js/dashboardangular-route.js"></script>
           <script src="js/dashboardcontroller.js"></script>
           <script src="js/dashboardvalidation.js"></script>
+		  <script>
+		  let firstname='<%=firstname%>';
+		  let lastname='<%=lastname%>';
+		  let email='<%=email%>';
+		  
+		 function loadApplicationDetails(){
+document.getElementById('fname').value=firstname;
+document.getElementById('lname').value=lastname;
+document.getElementById('email').value=email;
+console.log(" Div loaded");
+}
+		//  var firstname=<%=firstname%>;
+		 // var first=< a%=user%>;
+		//  var object=<a%=username%>;
+		 // document.getElementById('fname').value="Bhaggi";
+		//  $( window ).on( "load", function() {
+    //console.log( "ready!" );
+	//document.getElementById('fname').value=="nag";
+		  
+//});
+
+
+		  </script>
           <style>
             .margn{
               margin:20px 0px 20px 0px;
@@ -26,14 +49,16 @@
    </head>
  <!--   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous"> -->
 <body ng-app="dashboard">
-   
+ <!--  <div style="display:none" id=""><a%=user%></div>-->
 <nav class="navbar navbar-inverse sidebar bgcolor" role="navigation">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header bgclr2DCC70">
       <div class="user margn">
         <span><!--template bindings={}--><img alt="userpic" class="mbt25" routerlink="/" src="img/dashboarduser.png" width="60px"></span>
-        <span class="userid white"><!--template bindings={}-->Student</span>
+        <span id="sideNavStudentName" class="userid white"><!--template bindings={}--><!--Student-->  <%=firstname%>
+		
+		</span>
         
     </div>
       
@@ -50,7 +75,7 @@
          <ul class="nav navbar-nav font16px">
             <li class="active"><a href="#!/dashboard">Dashboard<span class="pull-right hidden-xs showopacity glyphicon glyphicon-home bordernone"></span></a></li>
 
-            <li class="active"><a href="#!/dashboardapplication">Application<span class="pull-right hidden-xs showopacity glyphicon glyphicon-list-alt bordernone"></span></a></li>
+            <li class="active"><a href="#!/dashboardapplication" >Application<span class="pull-right hidden-xs showopacity glyphicon glyphicon-list-alt bordernone"></span></a></li>
 
             <li ><a href="#!/dashboardcourseclick1">Course<span class="pull-right hidden-xs showopacity glyphicon glyphicon-edit bordernone"></span></a></li>
 

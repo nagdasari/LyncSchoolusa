@@ -13,6 +13,7 @@ let rp = require('./controllers/resetpassword');
 let courses = require('./controllers/courses');
 let subcourses = require('./controllers/subcourses');
 let subcoursemain = require('./controllers/subcoursemain');
+//let passportVariable=request.session.passport.user;
 
 class Router {
 
@@ -101,7 +102,7 @@ this.router.get('/contactus',(request,response) => {
 
 this.router.get('/profileN',isLoggedIn,(request,response) => {
 	console.log("User email from session"+request.session.passport.user.email);
-	 response.render('homesource.ejs',{ name: request.session.passport.user.firstname}); 
+	 response.render('homesource.ejs',{ name:request.session.passport.user.firstname}); 
 });      
 
 
@@ -127,15 +128,18 @@ this.router.get('/logout', function(req, res) {
         res.redirect('/');
     });
  
- this.router.get('/user',(request,response)=>{
-        response.render('dashboardsidenavres');
+ this.router.get('/user',isLoggedIn,(request,response)=>{
+	 var userObject=request.session.passport.user;
+        response.render('dashboardsidenavres',{firstname:userObject.firstname,lastname:userObject.lastname,email:userObject.email});
     })  ;
 
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
         return next();
- 
-    res.sendStatus(401);
+	else
+		res.redirect('/login');
+ console.log(sendStatus(401));
+   //res.sendStatus(401);
 }
  
  
