@@ -25,6 +25,15 @@ class Router {
 
 
   init(){
+      
+      
+      
+        this.router.get('/confirm', function(req, res) {
+        var ex = {
+            songName: req.session.passport.user
+        }
+        res.send(ex);
+    }) ;
 
 this.router.get('/', (request,response) => {
 if(request.session.passport!=undefined)
@@ -220,7 +229,7 @@ response.render('coursedetails', { maincoursedata: ele2, name:request.session.pa
      /* added routes for courses  dynamic */ 
       
       
-   
+
       
 
  
