@@ -27,6 +27,7 @@
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "express-session": "^1.15.0",
+    "fs": "0.0.1-security",
     "jquery": "^3.1.1",
     "mongodb": "^2.2.22",
     "mongoose": "^4.7.9",
