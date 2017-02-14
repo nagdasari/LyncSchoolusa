@@ -7,6 +7,7 @@ dashboard.config(function($routeProvider) {
 	})
 	 .when("/dashboardapplication",{
 		templateUrl:"dashboardapplication.html"
+        
 	})
 	.when("/dashboardios2",{
 		templateUrl:"dashboardios2.html"
@@ -80,4 +81,11 @@ dashboard.config(function($routeProvider) {
 	})
 });
 
- 
+ dashboard.run(function ($rootScope, $http) {
+    $http.get('/confirm')
+        .then(function(res) {
+            console.log(res);
+            $rootScope.songName = res.data.songName;
+            console.log($rootScope.songName)
+        })
+})

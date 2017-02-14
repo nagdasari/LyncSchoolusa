@@ -7,6 +7,26 @@ let passportLocalMongoose = require('passport-local-mongoose');
 
 let applicationSchema  = mongoose.Schema({
     
+    userid :{
+        
+        type: String,
+        unique: false
+    },
+    firstname :{
+        type: String,
+        unique:false
+    },
+    
+    lastname :{
+        type: String,
+        unique:false
+    },
+    
+    email : {
+        type: String,
+        unique: false
+    },
+    
     
     mobile : {
         type:String,
@@ -38,17 +58,12 @@ let applicationSchema  = mongoose.Schema({
     
     
 },
-    resume_location:{
-        type: String,
-        unique:false
-    },
-    
-                                  
+    /* add resume field here */                            
     createdat :{
         type: String,
         unique:false
     }
     
 });
-userSchema.plugin(passportLocalMongoose);
-module.exports  =  mongoose.model('applications', userSchema);
+applicationSchema.plugin(passportLocalMongoose);
+module.exports  =  mongoose.model('applications', applicationSchema);

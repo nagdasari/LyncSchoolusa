@@ -10,6 +10,7 @@ let login = require('./controllers/loginAuthentication');
 let forgotpassword = require('./controllers/forgotpassword');
 let resetpassword = require('./controllers/resetpassword');
 let head = require('./controllers/headercontact');
+let application = require('./controllers/application');
 
 
 
@@ -32,9 +33,7 @@ this.router.post('/login',passport.authenticate('local', { successRedirect: '/pr
 this.router.post('/forgotpasscode',forgotpassword.sendForgotLink);
 this.router.post('/resetpassword',resetpassword.resetP.bind(express));
 this.router.post('/header-contact-us',head.HeaderContact.bind(express));
-this.router.post('/api/register',(request,response) => {
-   console.log("hello naveen") ;
-});
+this.router.post('/api/register',application.userApplication.bind(express));
 
 }
 
