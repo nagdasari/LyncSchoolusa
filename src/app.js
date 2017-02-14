@@ -6,6 +6,7 @@ let passport = require('passport');
 let LocalStrategy = require('passport-local').Strategy;
 let camo = require('camo');
 let Router = require('./router.js');
+//let UserRoutes = require('./controllers/users/usersroutes.js');
 //let ContactUsRouter = require('./contactus/contactus_route');
 let Api = require('./api.js');
 let dbConfig = require('./configurations/database/db.js');
@@ -70,12 +71,16 @@ this.app.use(passport.session());
 routes(){
 let router;
 let api;
-let contact;
+let userroutes;
+//let contact;
 router = new Router().router;
 api = new Api().router;
+  //  userroutes = new UserRoutes().userroutes;
 //contact = new ContactUsRouter();
 this.app.use(router);
 this.app.use(api);
+   // this.app.use(userroutes);
+   // this.app.use(new UserRoutes().router);
 //this.app.use(new ContactUsRouter());
 }
 
