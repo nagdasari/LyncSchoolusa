@@ -2,17 +2,19 @@
 let express = require('express');
 let router = express.Router();
 
-
 class UserRoutes{
     constructor(){
+		this.router = router;
         this.init();
     }
     
     init(){
-        console.log("hello");
-        this.router.get('/sahiti',(req,res)=>{
-           console.log("sahiti") ;
+    
+        this.router.get('/sahiti',(request,response)=>{
+          console.log("sahiti") ;
+		   response.render('login');
         });
+	
     }
 }
 
