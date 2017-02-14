@@ -13,6 +13,8 @@ let rp = require('./controllers/resetpassword');
 let courses = require('./controllers/courses');
 let subcourses = require('./controllers/subcourses');
 let subcoursemain = require('./controllers/subcoursemain');
+let userCourse = require('./controllers/usercourse');
+
 //let passportVariable=request.session.passport.user;
 
 class Router {
@@ -26,9 +28,9 @@ class Router {
 
   init(){
       
+this.router.get('/getUserCourse/sanjeevini/',userCourse.getUserCourse)  ;    
       
-      
-        this.router.get('/confirm', function(req, res) {
+this.router.get('/confirm', function(req, res) {
         var ex = {
             songName: req.session.passport.user
         }

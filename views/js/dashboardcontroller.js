@@ -89,3 +89,15 @@ dashboard.config(function($routeProvider) {
             console.log($rootScope.songName)
         })
 })
+ 
+ dashboard.run(function($rootScope, $http){
+     $http.get('/getUserCourse/sanjeevini/').then(function(respo){
+        console.log("hello" + respo.data.coursename); 
+         $rootScope.coursename = respo.data.coursename;
+         $rootScope.courseimage = respo.data.courseimage;
+         $rootScope.course_description = respo.data.course_description;
+         
+     });
+ });
+ 
+ 
