@@ -49,7 +49,8 @@ dashboard.config(function($routeProvider) {
         controller: 'coursecontroller'
 	})
       .when("/dashboardcourseclick2",{
-		templateUrl:"dashboardcourseclick2.html"
+		templateUrl:"dashboardcourseclick2.html",
+        controller: 'chaptercontroller'
 	})
       .when("/dashboardcourseclick3",{
 		templateUrl:"dashboardcourseclick3.html"

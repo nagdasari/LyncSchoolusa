@@ -21,10 +21,10 @@ exports.getCoursesList =  function(){
 
                    id =  item._id;
                    data.id= id;
-                 // console.log("hello " +data.id);
+                 console.log("hello " +data.id);
                    coursename = item.course_name;
                    data.coursename = coursename;
-                //   console.log("hello " +data.coursename);
+                   console.log("hello " +data.coursename);
                    courseimage = item.course_image;
                    data.courseimage = courseimage;
                //   console.log("hello" +  data.courseimage);
