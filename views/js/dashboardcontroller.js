@@ -1,3 +1,4 @@
+//<script src="dashboardcontrollerfunctions.js"></script>
 var dashboard=angular.module('dashboard', ['ngRoute']);
 dashboard.config(function($routeProvider) {
 	$routeProvider
@@ -6,7 +7,8 @@ dashboard.config(function($routeProvider) {
 		templateUrl:"dashboard.html"
 	})
 	 .when("/dashboardapplication",{
-		templateUrl:"dashboardapplication.html"
+		templateUrl:"dashboardapplication.html",
+        controller: 'appcontroller'
         
 	})
 	.when("/dashboardios2",{
@@ -43,7 +45,8 @@ dashboard.config(function($routeProvider) {
 		templateUrl:"dashboardasgmntclick3.html"
 	})
       .when("/dashboardcourseclick1",{
-		templateUrl:"dashboardcourseclick1.html"
+		templateUrl:"dashboardcourseclick1.html",
+        controller: 'coursecontroller'
 	})
       .when("/dashboardcourseclick2",{
 		templateUrl:"dashboardcourseclick2.html"
@@ -81,23 +84,36 @@ dashboard.config(function($routeProvider) {
 	})
 });
 
- dashboard.run(function ($rootScope, $http) {
-    $http.get('/confirm')
-        .then(function(res) {
-            console.log(res);
-            $rootScope.songName = res.data.songName;
-            console.log($rootScope.songName)
-        })
-})
+// dashboard.run(function ($rootScope, $http) {
+//    $http.get('/confirm')
+//        .then(function(res) {
+//            console.log(res);
+//            $rootScope.songName = res.data.songName;
+//            console.log($rootScope.songName)
+//        })
+//})
  
- dashboard.run(function($rootScope, $http){
-     $http.get('/getUserCourse/sanjeevini/').then(function(respo){
-        console.log("hello" + respo.data.coursename); 
-         $rootScope.coursename = respo.data.coursename;
-         $rootScope.courseimage = respo.data.courseimage;
-         $rootScope.course_description = respo.data.course_description;
-         
-     });
- });
- 
+
+
+
+//dashboard.controller('appcontroller', function($scope,$rootScope,$http){
+//    $http.get('/confirm').then(function(res){console.log(res);
+//                                             $rootScope.songName = res.data.songName;
+//     console.log($rootScope.songName);
+//                                            });
+//});
+//
+
+
+
+// dashboard.run(function($rootScope, $http){
+//     $http.get('/getUserCourse/sanjeevini/').then(function(respo){
+//        console.log("hello" + respo.data.coursename); 
+//         $rootScope.coursename = respo.data.coursename;
+//         $rootScope.courseimage = respo.data.courseimage;
+//         $rootScope.course_description = respo.data.course_description;
+//         
+//     });
+// });
+// 
  

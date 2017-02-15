@@ -11,7 +11,7 @@ class UserRoutes{
     init(){
     
         this.router.get('/sahiti',(request,response)=>{
-          console.log("sahiti") ;
+         // console.log("sahiti") ;
 		   response.render('login');
         });
 	
