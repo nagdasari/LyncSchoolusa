@@ -27,6 +27,8 @@ class Router {
 
 
   init(){
+	  
+	  
       
 this.router.get('/getUserCourse/sanjeevini/',userCourse.getUserCourse)  ;    
       
@@ -182,7 +184,7 @@ if(request.session.passport!=undefined)
             });
         });
 
-      
+    
 this.router.get('/:name', (request, response) => {
             var raw_url = request.url.toString();
          var  new_url =  raw_url.replace('/','');
@@ -205,7 +207,11 @@ if(request.session.passport!=undefined)
             });
            // res.render('balaji');
         });
-
+/*    this.router.get('/sahiti',(request,response)=>{
+          console.log("sahiti") ;
+		   response.render('login');
+        });
+*/
 
         this.router.get('/training/:name1', (request,response)=>{
 
@@ -232,8 +238,7 @@ response.render('coursedetails', { maincoursedata: ele2, name:request.session.pa
       
       
 
-      
-
+    
  
   }
 }
