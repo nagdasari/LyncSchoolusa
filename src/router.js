@@ -49,49 +49,49 @@ else
 	response.render('homesource.ejs',{name:""});
     });
       
-this.router.get('/login',(request,response) => {
-   response.render('login'); 
-});
+//this.router.get('/login',(request,response) => {
+//   response.render('login'); 
+//});
 
 
-this.router.get('/register',(request,response) => {
-   response.render('register'); 
-});      
+//this.router.get('/register',(request,response) => {
+//   response.render('register'); 
+//});      
       
 this.router.get('/profile',(request,response) => {
    response.render('profile'); 
 });   
 
-this.router.get('/program',(request,response) => {
-	if(request.session.passport!=undefined)
-	if(request.session.passport.user!=undefined)
-   response.render('programs.ejs',{ name: request.session.passport.user.firstname}); 
-else
-	response.render('programs.ejs',{name:""});
-else
-	response.render('programs.ejs',{name:""});
-});       
+//this.router.get('/program',(request,response) => {
+//	if(request.session.passport!=undefined)
+//	if(request.session.passport.user!=undefined)
+//   response.render('programs.ejs',{ name: request.session.passport.user.firstname}); 
+//else
+//	response.render('programs.ejs',{name:""});
+//else
+//	response.render('programs.ejs',{name:""});
+//});       
   
-this.router.get('/about',(request,response) => {
-    if(request.session.passport!=undefined)
-	if(request.session.passport.user!=undefined)
-   response.render('about',{ name: request.session.passport.user.firstname}); 
-else
-	response.render('about',{name:""});
-else
-	response.render('about',{name:""});
-});       
-          
+//this.router.get('/about',(request,response) => {
+//    if(request.session.passport!=undefined)
+//	if(request.session.passport.user!=undefined)
+//   response.render('about',{ name: request.session.passport.user.firstname}); 
+//else
+//	response.render('about',{name:""});
+//else
+//	response.render('about',{name:""});
+//});       
+//          
       
-this.router.get('/thankyou',(request,response) => {
-    if(request.session.passport!=undefined)
-	if(request.session.passport.user!=undefined)
-   response.render('thankyou',{ name: request.session.passport.user.firstname}); 
-else
-	response.render('about',{name:""});
-else
-	response.render('about',{name:""});
-});       
+//this.router.get('/thankyou',(request,response) => {
+//    if(request.session.passport!=undefined)
+//	if(request.session.passport.user!=undefined)
+//   response.render('thankyou',{ name: request.session.passport.user.firstname}); 
+//else
+//	response.render('about',{name:""});
+//else
+//	response.render('about',{name:""});
+//});       
       
       
 this.router.get('/forgotpassword',(request,response) => {
