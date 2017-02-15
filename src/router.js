@@ -14,7 +14,7 @@ let courses = require('./controllers/courses');
 let subcourses = require('./controllers/subcourses');
 let subcoursemain = require('./controllers/subcoursemain');
 let userCourse = require('./controllers/usercourse');
-
+let userchapter = require('./controllers/userchapter');
 //let passportVariable=request.session.passport.user;
 
 class Router {
@@ -27,10 +27,28 @@ class Router {
 
 
   init(){
-	  
-	  
       
-this.router.get('/getUserCourse/sanjeevini/',userCourse.getUserCourse)  ;    
+      
+      this.router.get('/courses', (request, response) => {
+            courses.getCoursesList().then(function(ele) {
+                 for(var t =0; t<ele.length; t++){
+                console.log(" In curses route" +  ele[t].id  + " " + ele[t].coursename + "" );
+                }
+                
+	if(request.session.passport!=undefined)                  response.render('courseslist', { coursedata: ele, name: request.session.passport.user.firstname });
+                else
+                    response.render('courseslist',{coursedata:ele,name:""});
+            }).catch(function(err) {
+                console.log("In courses route" + err);
+
+            });
+        });
+	  
+	  
+//this.router.get('/getUserChapter/dashboard',userchapter.UserChapters);
+      
+      
+this.router.get('/getUserCourse/dashboard/',userCourse.getUserCourse)  ;    
       
 this.router.get('/confirm', function(req, res) {
         var ex = {
@@ -49,49 +67,49 @@ else
 	response.render('homesource.ejs',{name:""});
     });
       
-this.router.get('/login',(request,response) => {
-   response.render('login'); 
-});
+//this.router.get('/login',(request,response) => {
+//   response.render('login'); 
+//});
 
 
-this.router.get('/register',(request,response) => {
-   response.render('register'); 
-});      
+//this.router.get('/register',(request,response) => {
+//   response.render('register'); 
+//});      
       
 this.router.get('/profile',(request,response) => {
    response.render('profile'); 
 });   
 
-this.router.get('/program',(request,response) => {
-	if(request.session.passport!=undefined)
-	if(request.session.passport.user!=undefined)
-   response.render('programs.ejs',{ name: request.session.passport.user.firstname}); 
-else
-	response.render('programs.ejs',{name:""});
-else
-	response.render('programs.ejs',{name:""});
-});       
+//this.router.get('/program',(request,response) => {
+//	if(request.session.passport!=undefined)
+//	if(request.session.passport.user!=undefined)
+//   response.render('programs.ejs',{ name: request.session.passport.user.firstname}); 
+//else
+//	response.render('programs.ejs',{name:""});
+//else
+//	response.render('programs.ejs',{name:""});
+//});       
   
-this.router.get('/about',(request,response) => {
-    if(request.session.passport!=undefined)
-	if(request.session.passport.user!=undefined)
-   response.render('about',{ name: request.session.passport.user.firstname}); 
-else
-	response.render('about',{name:""});
-else
-	response.render('about',{name:""});
-});       
-          
+//this.router.get('/about',(request,response) => {
+//    if(request.session.passport!=undefined)
+//	if(request.session.passport.user!=undefined)
+//   response.render('about',{ name: request.session.passport.user.firstname}); 
+//else
+//	response.render('about',{name:""});
+//else
+//	response.render('about',{name:""});
+//});       
+//          
       
-this.router.get('/thankyou',(request,response) => {
-    if(request.session.passport!=undefined)
-	if(request.session.passport.user!=undefined)
-   response.render('thankyou',{ name: request.session.passport.user.firstname}); 
-else
-	response.render('about',{name:""});
-else
-	response.render('about',{name:""});
-});       
+//this.router.get('/thankyou',(request,response) => {
+//    if(request.session.passport!=undefined)
+//	if(request.session.passport.user!=undefined)
+//   response.render('thankyou',{ name: request.session.passport.user.firstname}); 
+//else
+//	response.render('about',{name:""});
+//else
+//	response.render('about',{name:""});
+//});       
       
       
 this.router.get('/forgotpassword',(request,response) => {

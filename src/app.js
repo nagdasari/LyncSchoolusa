@@ -8,7 +8,7 @@ let camo = require('camo');
 let Router = require('./router.js');
 let UserRoutes = require('./controllers/users/usersroutes.js');
 //let UserRoutes = require('./usersroutes.js');
-//let ContactUsRouter = require('./contactus/contactus_route');
+//let ContactRoutes = require('./controllers/contact/contactroutes.js');
 let Api = require('./api.js');
 let dbConfig = require('./configurations/database/db.js');
 let app = express();
@@ -73,17 +73,15 @@ routes(){
 let router;
 let api;
 let userroutes;
-//let contact;
+let contact;
 router = new Router().router;
 api = new Api().router;
-   userroutes = new UserRoutes().router;
-//contact = new ContactUsRouter();
+userroutes = new UserRoutes().router;
+//contact = new ContactRoutes();
 this.app.use(userroutes);
 this.app.use(router);
 this.app.use(api);
-    
-   // this.app.use(new UserRoutes().router);
-//this.app.use(new ContactUsRouter());
+//this.app.use(contact);    
 }
 
 
