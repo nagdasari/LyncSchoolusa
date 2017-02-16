@@ -45,7 +45,7 @@ class Router {
         });
 	  
 	  
-//this.router.get('/getUserChapter/dashboard',userchapter.UserChapters);
+this.router.get('/getUserChapter/dashboard',userchapter.getUserChapters);
       
       
 this.router.get('/getUserCourse/dashboard/',userCourse.getUserCourse)  ;    
