@@ -21,10 +21,11 @@ class UserChapters{
                let applicationcourseid= obj.course;
                //console.log("Application Course id "+applicationcourseid);
                let count = chapterUser.find({"courseid":applicationcourseid});
-               console.log("value of count" +JSON.stringify(count,null,4));
-              // Model.find().count(function (err, count) {
-    // Get count, but cannot get results of find
-//});
+               count.exec(function (err, course) {
+                   if (err) return handleError(err);
+                   console.log("Number of courses: "+course.length) ;
+               });
+            
                
                
            } else{
