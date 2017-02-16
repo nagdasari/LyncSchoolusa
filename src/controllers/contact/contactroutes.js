@@ -15,6 +15,7 @@ class ContactRoutes{
         
         this.router.get('/demo',function(req,res){
             console.log("nbfnbngbsdngbdnbgndsbgndbsgndsbgnbsdgnbdsgn");
+			res.render('login');
         });
 	
 
