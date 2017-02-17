@@ -47,10 +47,6 @@ console.log("eror" + error);
 
 
 dashboard.controller('videocontroller',function($scope,$rootScope,$http,$routeParams){
-console.log("helo");
-console.log("in video controller "+ $routeParams.videocode);
-$scope.videotoken = $routeParams.videocode;
-var jsondata = $scope.videotoken;    
- $http.post('/videocontent/dashboard', jsondata);
-
+    console.log("helo");
+    console.log("in video controller "+ $routeParams.vid);
 });

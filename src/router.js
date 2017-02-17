@@ -15,6 +15,7 @@ let subcourses = require('./controllers/subcourses');
 let subcoursemain = require('./controllers/subcoursemain');
 let userCourse = require('./controllers/usercourse');
 let userchapter = require('./controllers/userchapter');
+let uservideos = require('./controllers/uservideo');
 //let passportVariable=request.session.passport.user;
 
 class Router {
@@ -27,7 +28,9 @@ class Router {
 
 
   init(){
-      
+      this.router.post('/videocontent/dashboard',function(request,response){
+          console.log("vidoecontent" +request.body.params);
+      });
       
       this.router.get('/courses', (request, response) => {
             courses.getCoursesList().then(function(ele) {
@@ -45,7 +48,7 @@ class Router {
         });
 	  
 	  
-//this.router.get('/getUserChapter/dashboard',userchapter.UserChapters);
+this.router.get('/getUserChapter/dashboard',userchapter.getUserChapters);
       
       
 this.router.get('/getUserCourse/dashboard/',userCourse.getUserCourse)  ;    
