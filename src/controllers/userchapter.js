@@ -24,7 +24,7 @@ class UserChapters{
                   if(object){
                       for( var i=0; i<object.length;i++){
                           console.log(object[i].chapterheading);
-                          elements.push({chapterid: object[i]._id, chapterheading:object[i].chapterheading, chaptersubheading:object[i].chaptersubheading,chapterdescription:object[i].chapterdescription});
+                          elements.push({chapterid: object[i]._id, chapterheading:object[i].chapterheading, chaptersubheading:object[i].chaptersubheading, chapterdescription:object[i].chapterdescription});
                       }
                       console.log(JSON.stringify(elements));
                       response.send(elements);

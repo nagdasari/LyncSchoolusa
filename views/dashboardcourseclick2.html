@@ -39,20 +39,27 @@
 </app-breadcrumb>
         <div class="row">
                <div class="col-md-12 padding50">
-                            <h4>iOS Development</h4>
+                            <h4>{{cname}}
+                   
+                   
+                   
+                   
+                   
+                   </h4>
                              <div class="ios">
-                                 <div class="row">
+                                 <div class="row" ng-repeat="x in sanjeevini">
                                     <div class="col-md-8">
-                                       <h5>BASICS OF C</h5>
-                                       <h6>Introduction to Objective-C</h6>
-                                       <p class="marginleft30">Basic introduction about ios Development</p>
+                                       <h5>{{x.chapterheading}}</h5>
+                                       <h6>{{x.chaptersubheading}}</h6>
+                                       <p class="marginleft30">{{x.chapterdescription}}</p>
                                     </div>
                                  <div class="col-md-4">
-                                  <a href="#!/dashboardcourseclick3"><span class="pull-right red margintop80">[Start]</span></a>
+                                  <a href="#!/dashboardcourseclick3/vid/{{x.chapterid}}"><span class="pull-right red margintop80">[Start]</span></a>
                                  </div>
 
                                 </div>
                                <hr>
+<!--
                                <div class="row ">
                                    <div class="col-md-8">
                                        <h5>BASICS OF C</h5>
@@ -76,6 +83,7 @@
                                  </div>
                                </div>
                                <hr>
+-->
                                  
                              </div>
                             

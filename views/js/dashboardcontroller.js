@@ -83,6 +83,13 @@ dashboard.config(function($routeProvider) {
          .when("/dashboardnotification",{
 		templateUrl:"dashboardnotification.html"
 	})
+    
+    
+    .when("/dashboardcourseclick3/vid/:videocode",{
+        templateUrl:"dashboardcourseclick3.html",
+        controller:'videocontroller'
+    })
+    
 });
 
 // dashboard.run(function ($rootScope, $http) {
