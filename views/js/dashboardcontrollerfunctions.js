@@ -34,6 +34,17 @@ $rootScope.display = khan.addproduct.email;
 dashboard.controller('chaptercontroller',function($scope,$rootScope,$http){
 console.log("india");
 $http.get('/getuserchapter/dashboard').then(function(res1){
-console.log("helloworld" + res1.length);    
+    console.log("Angular response"+JSON.stringify(res1));
+    $scope.teamList = res1.elements;
+  //  console.log($scope.teamList.length);
+////console.log("helloworld" + res1.length); 
+//    console.log("inside function"+res1);
+//    console.log("h" + res1.elements.chapterheading[0]);
+//    for(var i=0; i<res1.length;i++){
+//        console.log("heya"+res1[i].chapterheading);
+//    }
+//    
+},function(error){
+    console.log("eror" + error);
 });
 });

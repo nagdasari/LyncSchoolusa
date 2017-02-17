@@ -20,13 +20,26 @@ class UserChapters{
                console.log(obj.course);
                let applicationcourseid= obj.course;
                //console.log("Application Course id "+applicationcourseid);
-               let count = chapterUser.find({"courseid":applicationcourseid});
-               count.exec(function (err, course) {
-                   if (err) return handleError(err);
-                   console.log("Number of courses: "+course.length) ;
-               });
-            
-               
+              chapterUser.find({"courseid":applicationcourseid},function(error,object){
+                  if(object){
+                      for( var i=0; i<object.length;i++){
+                          console.log(object[i].chapterheading);
+                          elements.push({chapterid: object[i]._id, chapterheading:object[i].chapterheading, chaptersubheading:object[i].chaptersubheading,chapterdescription:object[i].chapterdescription});
+                      }
+                      console.log(JSON.stringify(elements));
+                      response.send(elements);
+                  } else{
+                      console.log("error" +  error);
+                  }
+              });
+//               count.exec(function (err, object) {
+//                   if (err) return handleError(err);
+//                   console.log("Number of courses: "+object.length) ;
+//               });
+//            for(var i=0;i<object.length;i++){
+//                console.log(object[i].chapterheading);
+//            }
+//               
                
            } else{
                console.log(err);
