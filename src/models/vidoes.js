@@ -22,8 +22,10 @@ let videosSchema  = mongoose.Schema({
         unique:false
     },
     
-    :{
-        viewmorecontent: String,
+    
+        viewmorecontent:
+    {
+        type:String,
         unique: false
         
     }

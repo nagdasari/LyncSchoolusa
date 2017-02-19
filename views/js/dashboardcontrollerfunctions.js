@@ -50,7 +50,12 @@ dashboard.controller('videocontroller',function($scope,$rootScope,$http,$routePa
 console.log("helo");
 console.log("in video controller "+ $routeParams.videocode);
 $scope.videotoken = $routeParams.videocode;
-var jsondata = $scope.videotoken;    
- $http.post('/videocontent/dashboard', jsondata);
-
+var jsondata ={var1:$scope.videotoken};    
+ $http.post('/videocontent/dashboard',jsondata).then(function(data) {
+$rootScope.videodata = data.data;  
+$rootScope.cname = data.courseName;     
+console.log("sanju" + JSON.stringify(data));
+console.log("posted successfully");
+        }
+);
 });

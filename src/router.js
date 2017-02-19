@@ -28,11 +28,16 @@ class Router {
 
 
   init(){
-      this.router.post('/videocontent/dashboard',function(request,response){
-          console.log("vidoecontent" +request.body.params);
-      });
       
-      this.router.get('/courses', (request, response) => {
+      
+      
+      this.router.post('/videocontent/dashboard', uservideos.getUserVideos);
+//      this.router.post('/videocontent/dashboard',function(request,response){
+//          console.log("in videocontent");
+//          console.log("vidoecontent" +JSON.stringify(request.body.var1));
+//      });
+      
+      this.router.post('/courses', (request, response) => {
             courses.getCoursesList().then(function(ele) {
                  for(var t =0; t<ele.length; t++){
                 console.log(" In curses route" +  ele[t].id  + " " + ele[t].coursename + "" );
