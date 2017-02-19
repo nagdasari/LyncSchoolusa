@@ -28,9 +28,20 @@ let chaptersSchema  = mongoose.Schema({
         
     },
                                   
-    createdat :{
+     url:{
         type: String,
-        unique:false
+        unique: false
+        
+    },
+      videodetails:{
+        type: String,
+        unique: false
+        
+    },
+      viewmorecontent:{
+        type: String,
+        unique: false
+        
     }
     
 });

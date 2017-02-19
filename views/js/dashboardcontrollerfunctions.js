@@ -2,7 +2,7 @@
 dashboard.service('khan',function(){    
 var addproduct;
 var courseName;
-    
+var chaptercontroller_data;   
 });
 
 
@@ -46,16 +46,25 @@ console.log("eror" + error);
 });
 
 
-dashboard.controller('videocontroller',function($scope,$rootScope,$http,$routeParams){
+dashboard.controller('videocontroller',function($scope,khan,$rootScope,$http,$routeParams){
 console.log("helo");
 console.log("in video controller "+ $routeParams.videocode);
 $scope.videotoken = $routeParams.videocode;
 var jsondata ={var1:$scope.videotoken};    
- $http.post('/videocontent/dashboard',jsondata).then(function(data) {
+$http.post('/videocontent/dashboard',jsondata).then(function(data) {
 $rootScope.videodata = data.data;  
-$rootScope.cname = data.courseName;     
+khan.chaptercontroller_data = data.data;    
+$rootScope.cname = khan.courseName;   
+console.log("nag" + $rootScope.cname);     
 console.log("sanju" + JSON.stringify(data));
 console.log("posted successfully");
-        }
+}
 );
+});
+
+
+
+dashboard.controller('chapterviewmorecontroller',function($scope,khan,$rootScope){
+$rootScope.cname = khan.courseName;
+$rootScope.chapterdata = khan.chaptercontroller_data;    
 });

@@ -56,7 +56,8 @@ dashboard.config(function($routeProvider) {
 		templateUrl:"dashboardcourseclick3.html"
 	})
       .when("/dashboardcourseclick4",{
-		templateUrl:"dashboardcourseclick4.html"
+		templateUrl:"dashboardcourseclick4.html",
+        controller: 'chapterviewmorecontroller'
 	})
       .when("/dashboardsettings",{
 		templateUrl:"dashboardsettings.html"
