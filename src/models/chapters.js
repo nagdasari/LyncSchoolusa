@@ -11,6 +11,11 @@ let chaptersSchema  = mongoose.Schema({
        
     },
     
+    chapterid:{
+        type:Number,
+        unique:false
+    },
+    
     chapterheading : {
         type:String,
         unique:false

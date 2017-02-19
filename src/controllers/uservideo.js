@@ -30,6 +30,7 @@ class UserVideos{
               console.log(" in obj1");
     data.chapterid = obj1._id;
     console.log("california" +  data.chapterid);
+              
     data.chapterheading = obj1.chapterheading;
     console.log("california" +  data.chapterheading);
     data.chaptersubheading = obj1.chaptersubheading;
@@ -40,7 +41,17 @@ class UserVideos{
     console.log("california" +  data.videodetails);
 data.videoviewmorecontent =  JSON.stringify(obj1.viewmorecontent);
 console.log("california" +  data.videoviewmorecontent);
-                response.send(data);
+              chapterUser.findOne({chapterid:{$gt:obj1.chapterid}},(err2,obj2)=>{
+                 if(obj2){
+                     data.nexturl = obj2._id;
+                     console.log("user video file" + data.nexturl);
+                                     response.send(data);
+
+                 } else{
+                     console.log(" user video file " +  err2);
+                 }
+              });
+              console.log("digitallync" +  JSON.stringify(data));
             }else{
                 console.log(err1);
             }               
