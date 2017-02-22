@@ -17,10 +17,9 @@ let userStatusSchema  = mongoose.Schema({
       
     },
     
-    chapternumber : {
-        type:String,
-        unique:false
-    },
+    chapternumber : [
+       
+    ],
     
     
         examid:

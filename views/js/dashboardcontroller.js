@@ -63,7 +63,8 @@ dashboard.config(function($routeProvider) {
 		templateUrl:"dashboardsettings.html"
 	})
       .when("/dashboardexamclick1",{
-		templateUrl:"dashboardexamclick1.html"
+		templateUrl:"dashboardexamclick1.html",
+        controller: 'examcontroller'
 	})
        .when("/dashboardtest",{
 		templateUrl:"dashboardtest.html"

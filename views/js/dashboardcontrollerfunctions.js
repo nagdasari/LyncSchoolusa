@@ -73,3 +73,9 @@ dashboard.controller('chapterviewmorecontroller',function($scope,khan,$rootScope
 $rootScope.cname = khan.courseName;
 $rootScope.chapterdata = khan.chaptercontroller_data;    
 });
+
+
+
+dashboard.controller('examcontroller', function($scope,khan,$rootScope){
+   
+});

@@ -15,7 +15,7 @@ class UserVideos{
    
     
     getUserVideos(request,response,next){
-        var data ={};
+        var data ={}; var elements=[];
        // console.log("In videos");
         var userid= request.session.passport.user._id;
         var video_token = JSON.stringify(request.body.var1);
@@ -31,7 +31,7 @@ class UserVideos{
         if(obj1){
         //console.log(" in obj1");
         data.chapterid = obj1._id;
-        //console.log("california" +  data.chapterid);
+        console.log("california" +  data.chapterid);
         data.courseid = obj1.courseid;
         //console.log("california" +  data.courseid);
         data.chapterheading = obj1.chapterheading;
@@ -71,22 +71,54 @@ class UserVideos{
         {
             var chp = obj.chapternumber;
           //  console.log("sahiti" + chp);
-            if(chp> data.chapternumber){
-                console.log("not updated");
-            }else{
-                userStatus.update({chapternumber: data.chapternumber},(error4,object4)=>{
-                                  if(!object4){
-                    console.log("error4" + error4);
+            console.log("length" +chp.length);
+            for(var i=0; i<chp.length;i++){
+                var s = chp[i];
+                var k = s.replace('"',"").replace('"',"");
+                console.log("jjj"+ k);
+           //  elements.push(JSON.stringify(chp[i]));
+              console.log( "jjj" +  data.chapterid);
+                if(k== data.chapterid){
+                    console.log("in if loop");
+                    console.log("  sfo" + k);
+                    console.log(" sfo" + data.chapterid);
+                              //   elements.push(JSON.stringify(chp[i]));
+                  elements.push(k);
+                    console.log(k+""+ data.chapterid);
+                    console.log( " not saved");
                 }else{
-                    console.log("updated successfully");
+                    console.log(" in else loop");
+                    console.log(data.chapterid);
+                    elements.push(JSON.stringify(data.chapterid));
+                    
                 }
-                                  });
+                
             }
+            
+            userStatus.update({chapternumber: elements},(error4,object4)=>{
+                        if(!object4) console.log("error4" + error4);
+                        else console.log("updated successfully");
+                    });
+                    
+//            if(chp> data.chapternumber){
+//                console.log("not updated");
+//            }else{
+//                userStatus.update({chapternumber: data.chapternumber},(error4,object4)=>{
+//                                  if(!object4){
+//                    console.log("error4" + error4);
+//                }else{
+//                    console.log("updated successfully");
+//                }
+//                                  });
+//            }
             
             
           //  console.log("successfully updated");
         }else{
-             new userStatus({userid: userid,courseid: data.courseid, chapternumber: data.chapternumber, examid:0, assignmentid:0}).save((error2)=>{if(error2){console.log(error2);}else{console.log("saved successfully");}}); 
+           elements.push(JSON.stringify(data.chapterid));
+                     //   elements.push(data.chapterid);
+
+             new userStatus({userid: userid,courseid: data.courseid, chapternumber: elements, examid:0, assignmentid:0}).save((error2)=>{if(error2){console.log(error2);}else{console.log("saved successfully");}}); 
             console.log(err);
         }        
         });
