@@ -12,7 +12,7 @@ class UserCourse{
         let session_id = request.session.passport.user._id;
         console.log("user session" + session_id);
         
-        
+     
         MongoClient.connect(configuration.mongoUrl,function (err,db) {
         
             console.log("Biscuit DB Connected");
@@ -28,6 +28,7 @@ class UserCourse{
                     if(!object) {
                         console.log(error);
                     }else{
+                       data.courseid = object._id;   
                        data.coursename = object.course_name;
                        data.courseimage = object.course_image;
                        data.course_description = object.course_description;

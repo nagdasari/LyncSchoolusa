@@ -11,6 +11,11 @@ let chaptersSchema  = mongoose.Schema({
        
     },
     
+    chapterid:{
+        type:Number,
+        unique:false
+    },
+    
     chapterheading : {
         type:String,
         unique:false
@@ -28,9 +33,20 @@ let chaptersSchema  = mongoose.Schema({
         
     },
                                   
-    createdat :{
+     url:{
         type: String,
-        unique:false
+        unique: false
+        
+    },
+      videodetails:{
+        type: String,
+        unique: false
+        
+    },
+      viewmorecontent:{
+        type: String,
+        unique: false
+        
     }
     
 });

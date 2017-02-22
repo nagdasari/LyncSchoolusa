@@ -2,7 +2,8 @@
 dashboard.service('khan',function(){    
 var addproduct;
 var courseName;
-    
+var courseid;    
+var chaptercontroller_data;   
 });
 
 
@@ -21,10 +22,12 @@ khan.addproduct=$rootScope.songName;
 dashboard.controller('coursecontroller', function($scope,khan,$rootScope,$http){
 $http.get('/getUserCourse/dashboard/').then(function(respo){
 console.log("hello" + respo.data.coursename); 
+$rootScope.courseid = respo.data.courseid;    
 $rootScope.coursename = respo.data.coursename;
 $rootScope.courseimage = respo.data.courseimage;
 $rootScope.course_description = respo.data.course_description;
 khan.courseName = respo.data.coursename;
+khan.courseid =respo.data.courseid;    
 console.log("world"+khan.addproduct.email);
 $rootScope.display = khan.addproduct.email;  
 
@@ -46,11 +49,33 @@ console.log("eror" + error);
 });
 
 
-dashboard.controller('videocontroller',function($scope,$rootScope,$http,$routeParams){
+dashboard.controller('videocontroller',function($scope,khan,$rootScope,$http,$routeParams){
 console.log("helo");
 console.log("in video controller "+ $routeParams.videocode);
 $scope.videotoken = $routeParams.videocode;
-var jsondata = $scope.videotoken;    
- $http.post('/videocontent/dashboard', jsondata);
+$scope.courseid = khan.courseid;    
+var jsondata ={var1:$scope.videotoken,var2:$scope.courseid};    
+$http.post('/videocontent/dashboard',jsondata).then(function(data) {
+$rootScope.videodata = data.data;  
+console.log("hellohello" + $rootScope.videodata.nexturl);    
+khan.chaptercontroller_data = data.data;    
+$rootScope.cname = khan.courseName;   
+console.log("nag" + $rootScope.cname);     
+console.log("sanju" + JSON.stringify(data));
+console.log("posted successfully");
+}
+);
+});
 
+
+
+dashboard.controller('chapterviewmorecontroller',function($scope,khan,$rootScope){
+$rootScope.cname = khan.courseName;
+$rootScope.chapterdata = khan.chaptercontroller_data;    
+});
+
+
+
+dashboard.controller('examcontroller', function($scope,khan,$rootScope){
+   
 });
