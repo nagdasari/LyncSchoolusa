@@ -201,7 +201,7 @@ this.router.get('/courses', (request, response) => {
                 //}
                 
 if(request.session.passport!=undefined)
-	if(request.session.passport.user!=undefined)                  response.render('courseslist', { coursedata: ele, name: request.session.passport.user.firstname });
+                    response.render('courseslist', { coursedata: ele, name: request.session.passport.user.firstname });
                 else
                     response.render('courseslist',{coursedata:ele,name:""});
             }).catch(function(err) {
@@ -213,14 +213,19 @@ if(request.session.passport!=undefined)
     
 this.router.get('/:name', (request, response) => {
             var raw_url = request.url.toString();
+   // console.log(" hi" + raw_url);
+    //console.log("query string" + request.query.name);
          var  new_url =  raw_url.replace('/','');
+    //console.log(" in subcourses dynamci route");
+    if(raw_url == "/favicon.ico") {response.render('homesource');}else{
+    //console.log("in else loop");
            subcourses.getCoursesList(new_url).then(function(ele1) {
 //                for (var t = 0; t < ele1.length; t++) {
 //                    console.log(" In curses1 route" + ele1[t].subcourseid + " " + ele1[t].subcoursename + "");
 //                }
                
 if(request.session.passport!=undefined)
-	if(request.session.passport.user!=undefined)               
+	//if(request.session.passport.user!=undefined)               
     response.render('subcourses', { subcoursedata: ele1,name: request.session.passport.user.firstname  });
                else
 	response.render('subcourses',{ subcoursedata: ele1,name: ""  });
@@ -231,6 +236,8 @@ if(request.session.passport!=undefined)
                 console.log("In courses route" + err);
 
             });
+        
+    }
            // res.render('balaji');
         });
 /*    this.router.get('/sahiti',(request,response)=>{

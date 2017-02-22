@@ -11,7 +11,7 @@ class ContactRoutes{
     
     init(){
     
-        console.log("inc ontact");
+       // console.log("inc ontact");
         
         this.router.get('/demo',function(req,res){
             console.log("nbfnbngbsdngbdnbgndsbgndbsgndsbgnbsdgnbdsgn");

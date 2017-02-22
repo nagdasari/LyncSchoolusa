@@ -45,7 +45,7 @@
                                      <div class="col-md-7 ">
                                           <div class="embed-responsive embed-responsive-16by9">
 <!--                                              <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY"></iframe>-->
-                                              <iframe class="embed-responsive-item" ng-src="{{videodata.videourl}}"></iframe>
+                                              <iframe class="embed-responsive-item" src="{{videodata.videourl}}"></iframe>
                                            </div>
                                      </div>
                                      <div class="col-md-5 ">
@@ -60,7 +60,11 @@
 <!--    <a href="#!/dashboardcourseclick3/vid/{{videodata.chapterid}}"><button class="btn btn-primary pull-right">Learn More</button></a>                                     -->
                                      </div>
                                  </div>
-                                 <div class="row">
+                                 
+                                 
+                                 
+                                 
+                    <div class="row" ng-if="videodata.nexturl!='nothing'">
 <!--
                                       <a href="#!/dashboardcourseclick4"><P class="pull-right margintop20">Next Lesson <br>What is iOS
                                      <i class="fa fa-chevron-right" aria-hidden="true"></i></P></a>
@@ -69,6 +73,26 @@
                                      <i class="fa fa-chevron-right" aria-hidden="true"></i></P></a>                                 
                                      
                                  </div>
+                                 
+  
+                            <div class="row" ng-else>
+                                 
+<!--
+                     <a href="#!/dashboardcourseclick3/vid/{{videodata.nexturl}}"><P class="pull-right margintop20">Next Lesson <br>What is iOS
+                                     <i class="fa fa-chevron-right" aria-hidden="true"></i></P></a>                
+                                 
+-->
+                                 
+                                 
+                                 
+                                 </div>
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
+                                 
                              </div>
                 </div>
         </div>

@@ -23,7 +23,9 @@ response.render('login');
 });
         
 this.router.get('/program',(request,response) => {
-if(request.session.passport.user!=undefined)
+if(request.session.passport!=undefined)
+    
+//if(request.session.passport.user!=undefined)
 response.render('programs.ejs',{ name: request.session.passport.user.firstname}); 
 else
 response.render('programs.ejs',{name:""});
