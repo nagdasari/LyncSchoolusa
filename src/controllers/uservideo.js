@@ -72,33 +72,46 @@ class UserVideos{
             var chp = obj.chapternumber;
           //  console.log("sahiti" + chp);
             console.log("length" +chp.length);
-            for(var i=0; i<chp.length;i++){
+            elements=chp;
+            var chapterIdParsed=JSON.stringify(data.chapterid);
+            if(!elements.includes(chapterIdParsed))
+              { elements.push(chapterIdParsed);
+           /* for(var i=0; i<chp.length;i++){
                 var s = chp[i];
-                var k = s.replace('"',"").replace('"',"");
-                console.log("jjj"+ k);
+                console.log("value of s " + s);
+                console.log("Elements at the begining of loop :"+elements);
+               // var k;
+                //if(s!=""&&s!=null)
+                 var k="\""+data.chapterid+"\"";
+             
+                //k = s.replace('"',"").replace('"',"");
+                console.log("jjj"+ k+"aa");
            //  elements.push(JSON.stringify(chp[i]));
-              console.log( "jjj" +  data.chapterid);
-                if(k== data.chapterid){
+              console.log( "jjj" + JSON.stringify(data.chapterid)+"bb");
+                if(!s.localeCompare(JSON.stringify(data.chapterid))){
                     console.log("in if loop");
-                    console.log("  sfo" + k);
+                    console.log("  sfo" + s);
                     console.log(" sfo" + data.chapterid);
                               //   elements.push(JSON.stringify(chp[i]));
-                  elements.push(k);
-                    console.log(k+""+ data.chapterid);
+                    console.log(" If loop elements :"+elements);
+                    console.log(s+""+ data.chapterid);
                     console.log( " not saved");
                 }else{
                     console.log(" in else loop");
                     console.log(data.chapterid);
+                    console.log(" Elements in array before append: " +elements);
                     elements.push(JSON.stringify(data.chapterid));
-                    
+                    console.log(" Elements after append: "+elements);
+
                 }
-                
-            }
-            
+                //elements.push(s);
+                    
+            }*/
+            console.log(" Elements before push : "+elements);
             userStatus.update({chapternumber: elements},(error4,object4)=>{
                         if(!object4) console.log("error4" + error4);
                         else console.log("updated successfully");
-                    });
+                    });              }     
                     
 //            if(chp> data.chapternumber){
 //                console.log("not updated");
@@ -115,6 +128,7 @@ class UserVideos{
             
           //  console.log("successfully updated");
         }else{
+            console.log(data.chapterid);
            elements.push(JSON.stringify(data.chapterid));
                      //   elements.push(data.chapterid);
 
